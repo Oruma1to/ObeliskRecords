@@ -17,7 +17,7 @@ const createUsers = async () => {
       username: "stefon",
       email: "stefon@jay.com",
       password_digest: bcrypt.hashSync('123ga', SALT_ROUNDS),
-    }
+    },
   ]
   await User.insertMany(users);
   console.log('Successfully created users!')
