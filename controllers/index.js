@@ -21,6 +21,7 @@ const getUsers = async (req, res) => {
 
 const signUp = async (req, res) => {
   try {
+    console.log(req.body)
     const { username, email, password, admin_key } = req.body
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS)
     const user = await new User({
@@ -29,7 +30,7 @@ const signUp = async (req, res) => {
       password_digest,
       admin_key
     })
-    await user.save()
+    await user.save();
 
     const payload = {
       id: user._id,
@@ -40,15 +41,15 @@ const signUp = async (req, res) => {
     const token = jwt.sign(payload, TOKEN_KEY)
     return res.status(201).json({ user, token })
   } catch (error) {
-    console.log("SignUp Error")
+    console.log("Error in signUp")
     return res.status(400).json({ error: error.message })
   }
 }
 
 const signIn = async (req, res) => {
   try {
-    const { email, password } = req.body
-    const user = await User.findOne({ email: email });
+    const { username, password } = req.body
+    const user = await User.findOne({ username: username });
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
         id: user._id,
