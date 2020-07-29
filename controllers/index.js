@@ -71,6 +71,7 @@ const updateUser = async (req, res) => {
   const token = req.headers.authorization.split(' ')[1];
   const data = jwt.verify(token, TOKEN_KEY);
   const tokenUserId = data.id;
+
   if (tokenUserId === id) {
     await User.findByIdAndUpdate(id, req.body, { new: true }, (error, user) => {
       if (error) {
