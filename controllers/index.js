@@ -98,10 +98,21 @@ const getAlbums = async (req, res) => {
   }
 };
 
+const getAlbum = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const album = await Album.findById(id);
+    res.json(album);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getUsers,
   signUp,
   signIn,
   updateUser,
   getAlbums,
+  getAlbum,
 };

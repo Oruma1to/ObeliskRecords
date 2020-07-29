@@ -11,5 +11,6 @@ router.post('/signin', controllers.signIn);
 router.put('/users/:id', restrict, controllers.updateUser);
 //Albums
 router.get('/albums', controllers.getAlbums);
+router.get('/albums/:id', controllers.getAlbum);
 
 module.exports = router;
