@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const Album = require('../models/album');
 const db = require('../db');
 require('dotenv').config();
 
@@ -87,9 +88,20 @@ const updateUser = async (req, res) => {
   }
 };
 
+//Albums
+const getAlbums = async (req, res) => {
+  try {
+    const albums = await Album.find();
+    res.json(albums);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getUsers,
   signUp,
   signIn,
   updateUser,
+  getAlbums,
 };
