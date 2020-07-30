@@ -10,6 +10,23 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 const SALT_ROUNDS = 11;
 const TOKEN_KEY = process.env.TOKEN_MASTER;
 
+// Helper functions
+// given a req, determine the user_ID from the token. this lets us know which user based on their token has tried to access a route 
+const userOfRequest = (req) => {
+  try {
+    const token = req.headers.authorization.split(" ")[1]
+    const legit = jwt.verify(token, TOKEN_KEY)
+    
+    if (legit) {
+      return legit
+    }
+    return false 
+  } catch (error) {
+    console.log(error)
+    return false 
+  }
+}
+
 //USERS
 const getUsers = async (req, res) => {
   try {
@@ -88,6 +105,18 @@ const updateUser = async (req, res) => {
   }
 };
 
+//verify user
+const verifyUser = async (req, res) => {
+  try {
+    const legit = await userOfRequest(req);
+
+    if (legit) return res.status(200).json(legit);
+    return res.status(401).send('Not Authorized');
+  } catch (error) {
+    res.status(500).send('Verify User - Server Error');
+  }
+}
+
 //Albums
 const getAlbums = async (req, res) => {
   try {
@@ -108,10 +137,19 @@ const getAlbum = async (req, res) => {
   }
 };
 
+const createAlbum = async (req, res) => {
+  try {
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
 module.exports = {
   getUsers,
   signUp,
   signIn,
+  verifyUser,
   updateUser,
   getAlbums,
   getAlbum,
