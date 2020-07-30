@@ -18,10 +18,13 @@ const Album = new Schema(
       type: String,
       required: true,
     },
-    tracks: {
-      type: Array,
-      default: [],
-    },
+    tracks: [
+      {
+        trackNumber: Number,
+        songTitle: String,
+        length: String
+      }
+    ], 
   },
   { timestamps: true }
 );

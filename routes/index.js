@@ -8,10 +8,13 @@ const router = Router();
 router.get('/users', controllers.getUsers);
 router.post('/signup', controllers.signUp);
 router.post('/signin', controllers.signIn);
-router.post('/verifyuser', controllers.verifyUser);
+router.get('/verifyuser', controllers.verifyUser);
 router.put('/users/:id', restrict, controllers.updateUser);
 //Albums
 router.get('/albums', controllers.getAlbums);
 router.get('/albums/:id', controllers.getAlbum);
+router.post('/albums', controllers.createAlbum);
+router.put('/albums/:id', controllers.editAlbum);
+router.delete('/albums/:id', controllers.deleteAlbum);
 
 module.exports = router;

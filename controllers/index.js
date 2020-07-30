@@ -84,6 +84,7 @@ const signIn = async (req, res) => {
   }
 };
 
+// update your own profile 
 const updateUser = async (req, res) => {
   const { id } = req.params;
   const token = req.headers.authorization.split(' ')[1];
@@ -139,18 +140,82 @@ const getAlbum = async (req, res) => {
 
 const createAlbum = async (req, res) => {
   try {
+    // needs to be an admin level user 
+    // user.admin_key needs to be true 
+    const { id } = await userOfRequest(req);
+
+    // find user using id to access admin 
+    const user = await User.findById(id);
+
+    if (!user.admin_key) {
+      return res.status(401).send('Not Authorized');
+    }
+
+    const album = await new Album(req.body)
+    await album.save()
+
+    res.status(201).json(album)
 
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 }
 
+const editAlbum = async (req, res) => {
+  try {
+    // needs to be an admin level user 
+    // user.admin_key needs to be true 
+    const { id } = await userOfRequest(req);
+
+    // find user using id to access admin 
+    const user = await User.findById(id);
+
+    if (!user.admin_key) {
+      return res.status(401).send('Not Authorized');
+    }
+
+    await Album.findByIdAndUpdate(req.params.id, req.body, { new: true }, (error, album) => {
+      if (error) {
+        return res.status(500).json({ error: error.message })
+      }
+      if (!album) {
+        return res.status(404).json({ message: "Album not found!" })
+      }
+      res.status(200).json(album)
+    })
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
+const deleteAlbum = async (req, res) => {
+  try {
+    // needs to be an admin level user 
+    // user.admin_key needs to be true 
+    const { id } = await userOfRequest(req);
+
+    // find user using id to access admin 
+    const user = await User.findById(id);
+
+    if (!user.admin_key) {
+      return res.status(401).send('Not Authorized');
+    }
+
+    const deleted = await Album.findByIdAndDelete(req.params.id)
+
+    if (deleted) {
+      return res.status(200).send("Album deleted!")
+    }
+    throw new Error("Album not found!")
+
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+
+
+// module export 
 module.exports = {
-  getUsers,
-  signUp,
-  signIn,
-  verifyUser,
-  updateUser,
-  getAlbums,
-  getAlbum,
+  getUsers, signUp, signIn, verifyUser, updateUser,
+  getAlbums, getAlbum, createAlbum, editAlbum, deleteAlbum
 };
