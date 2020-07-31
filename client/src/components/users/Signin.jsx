@@ -9,13 +9,13 @@ export default function Signin() {
   console.log(username, password);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const response = await signin({
       username, password
     });
 
-    console.log(response)
+    console.log(response);
   }
 
   return (

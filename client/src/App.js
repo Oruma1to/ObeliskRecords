@@ -4,6 +4,8 @@ import { Route } from 'react-router-dom'
 
 import Signin from './components/users/Signin'
 import Signup from './components/users/Signup'
+import Albums from './components/albums/Albums'
+
 
 function App() {
   return (
@@ -16,6 +18,10 @@ function App() {
       </Route>
       <Route path="/signup">
         <Signup />
+      </Route>
+
+      <Route path="/albums">
+        <Albums />
       </Route>
     </div>
   );

@@ -10,13 +10,13 @@ export default function Signin() {
   console.log(username, password);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const response = await signup({
       username, password, email
     });
 
-    console.log(response)
+    console.log(response);
   }
 
   return (
