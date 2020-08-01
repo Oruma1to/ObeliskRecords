@@ -24,7 +24,11 @@ const Album = new Schema(
         songTitle: String,
         length: String
       }
-    ], 
+    ],
+    albumCover: {
+      type: String,
+      required: true,
+    }
   },
   { timestamps: true }
 );

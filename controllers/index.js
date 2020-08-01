@@ -54,6 +54,7 @@ const signUp = async (req, res) => {
       id: user._id,
       username: user.username,
       email: user.email,
+      admin_key: user.admin_key
     };
 
     const token = jwt.sign(payload, TOKEN_KEY);
@@ -73,6 +74,7 @@ const signIn = async (req, res) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        admin_key: user.admin_key
       };
       const token = jwt.sign(payload, TOKEN_KEY);
       return res.status(201).json({ user, token });

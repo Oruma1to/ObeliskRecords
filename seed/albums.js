@@ -22,6 +22,7 @@ const createAlbums = async () => {
           length: '2:35',
         },
       ],
+      albumCover: 'https://img.discogs.com/WWM3W1bvHKrhIWN0aVi9cJPD4Xg=/fit-in/600x588/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6916676-1429456835-4674.jpeg.jpg'
     },
   ];
   await Album.insertMany(albums);
