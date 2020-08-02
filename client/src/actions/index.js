@@ -1,18 +1,26 @@
-export const increment = (num) => {
+export const increment = (num = 1) => {
   return {
     type:'INCREMENT',
     payload: num
   }
 }
 
-export const decrement = () => {
+export const decrement = (num = 1) => {
   return {
-    type:'DECREMENT'
+    type: 'DECREMENT',
+    payload: num
   }
 }
 
-export const logIn = () => {
+export const logIn = (user) => {
   return {
-    type: 'SIGNIN'
+    type: 'SIGNIN',
+    payload: user
+  }
+}
+
+export const logOut = () => {
+  return {
+    type: 'SIGNOUT'
   }
 }
