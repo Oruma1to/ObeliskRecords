@@ -10,3 +10,13 @@ export const getAlbums = async () => {
   }
 }
 
+export const createAlbum = async (bodyData) => {
+  try {
+    const response = await api.post(`/albums`, bodyData)
+    
+    return response.data
+  } catch (error) {
+      throw error
+  }
+}
+

@@ -1,0 +1,11 @@
+.editSection {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.testImage {
+  display: block;
+  max-width: 200px;
+  max-height: 200px;
+  margin: 0 auto;
+}

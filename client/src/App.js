@@ -7,6 +7,7 @@ import { logIn } from './actions'
 import Signin from './components/users/Signin'
 import Signup from './components/users/Signup'
 import Albums from './components/albums/Albums'
+import CreateAlbum from './components/albums/CRUD/CreateAlbum'
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
       </Route>
       <Route path="/albums">
         <Albums />
+      </Route>
+      <Route path="/createalbum">
+        <CreateAlbum />
       </Route>
     </div>
   );
