@@ -1,0 +1,19 @@
+.header-nav {
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+
+}
+
+.nav-link {
+  text-decoration: none;
+  color: blue;
+  font-size: 1.5rem;
+  margin: auto
+}
+
+.cart {
+  padding: 10px;
+  font-size: 1rem
+}

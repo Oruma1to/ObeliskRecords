@@ -1,0 +1,17 @@
+.album-container {
+  height: 300px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: solid 2px black;
+  align-items: center;
+}
+
+.album-cover {
+  width: 90%;
+  margin-top: 10px
+}
+
+.album-title {
+  margin-top: 10px
+}

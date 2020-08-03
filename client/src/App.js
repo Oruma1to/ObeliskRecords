@@ -7,7 +7,12 @@ import { logIn } from './actions'
 import Signin from './components/users/Signin'
 import Signup from './components/users/Signup'
 import Albums from './components/albums/Albums'
+
+import Header from './components/shared/Header';
+import Home from './components/shared/Home'
+import Album from './components/albums/Album';
 import CreateAlbum from './components/albums/CRUD/CreateAlbum'
+
 
 
 function App() {
@@ -19,9 +24,14 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Route path="/" exact>
-        <h1>IsLogged {isLogged ? "yes" : "no"}</h1>
-        <button onClick={() => dispatch(logIn())}>+</button>
+        <Home />
+        {/* <h1>IsLogged {isLogged ? "yes" : "no"}</h1>
+        <button onClick={() => dispatch(logIn())}>+</button> */}
+      </Route>
+      <Route path="/albums/:id">
+        <Album />
       </Route>
       <Route path="/signin">
         <Signin />
@@ -29,7 +39,7 @@ function App() {
       <Route path="/signup">
         <Signup />
       </Route>
-      <Route path="/albums">
+      <Route exact path="/albums">
         <Albums />
       </Route>
       <Route path="/createalbum">
