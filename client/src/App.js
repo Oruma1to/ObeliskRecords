@@ -7,14 +7,21 @@ import { logIn } from './actions'
 import Signin from './components/users/Signin'
 import Signup from './components/users/Signup'
 import Albums from './components/albums/Albums'
+
 import Header from './components/shared/Header';
 import Home from './components/shared/Home'
 import Album from './components/albums/Album';
+import CreateAlbum from './components/albums/CRUD/CreateAlbum'
+
 
 
 function App() {
   const isLogged = useSelector(state => state.isLogged)
   const dispatch = useDispatch()
+
+  // on component did mount, try to log in and set the user 
+
+
   return (
     <div className="App">
       <Header />
@@ -34,6 +41,9 @@ function App() {
       </Route>
       <Route exact path="/albums">
         <Albums />
+      </Route>
+      <Route path="/createalbum">
+        <CreateAlbum />
       </Route>
     </div>
   );
