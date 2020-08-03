@@ -13,6 +13,10 @@ import CreateAlbum from './components/albums/CRUD/CreateAlbum'
 function App() {
   const isLogged = useSelector(state => state.isLogged)
   const dispatch = useDispatch()
+
+  // on component did mount, try to log in and set the user 
+
+
   return (
     <div className="App">
       <Route path="/" exact>
