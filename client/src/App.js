@@ -8,6 +8,7 @@ import Signin from './components/users/Signin'
 import Signup from './components/users/Signup'
 import Albums from './components/albums/Albums'
 import CreateAlbum from './components/albums/CRUD/CreateAlbum'
+import EditAlbum from './components/albums/CRUD/EditAlbum'
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
       </Route>
       <Route path="/createalbum">
         <CreateAlbum />
+      </Route>
+      <Route path="/editalbum/:id">
+        <EditAlbum />
       </Route>
     </div>
   );
