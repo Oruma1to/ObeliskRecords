@@ -19,6 +19,7 @@ export default function EditAlbum() {
   const [albumName, setAlbumName] = useState('')
   const [artistName, setArtistName] = useState('')
   const [year, setYear] = useState(2000)
+  const [price, setPrice] = useState(10.99)
   const [genre, setGenre] = useState('')
   const [albumCover, setAlbumCover] = useState('')
   const [tracks, setTracks] = useState([])
@@ -69,6 +70,7 @@ export default function EditAlbum() {
       setAlbumName(response.albumName)
       setArtistName(response.artistName)
       setYear(response.year)
+      setPrice(response.price)
       setGenre(response.genre)
       setAlbumCover(response.albumCover)
       setTracks(response.tracks)
@@ -107,7 +109,7 @@ export default function EditAlbum() {
     
     try {
       const response = await editAlbum(id, {
-        albumName, artistName, year, genre, albumCover, tracks
+        albumName, artistName, year, price, genre, albumCover, tracks
       })
 
       console.log(response)
@@ -143,6 +145,13 @@ export default function EditAlbum() {
             type="number"
             value={year}
             onChange={e => setYear(e.target.value)}
+          />
+
+          <label htmlFor="price">Price</label>
+          <input name="price"
+            type="number"
+            value={price}
+            onChange={e => setPrice(e.target.value)}
           />
 
           <label htmlFor="genre">Genre</label>
