@@ -1,0 +1,19 @@
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-title {
+  font-size: 3rem;
+  padding: .8rem;
+  background-color: peachpuff;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-search {
+  margin: 0 auto;
+  width: 50%;
+}
+
