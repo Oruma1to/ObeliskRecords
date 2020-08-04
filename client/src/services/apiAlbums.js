@@ -2,30 +2,45 @@ import api from './apiConfig';
 
 export const getAlbums = async () => {
   try {
-    const response = await api.get(`/albums`);
+    const response = await api.get(`/albums`)
 
     return response.data;
   } catch (error) {
-    throw error;
+    throw error
   }
 };
 
-export const createAlbum = async bodyData => {
+
+export const getOneAlbum = async (id) => {
   try {
-    const response = await api.post(`/albums`, bodyData);
-
-    return response.data;
+    const response = await api.get(`/albums/${id}`)
+    
+    return response.data
   } catch (error) {
-    throw error;
+      throw error
   }
-};
+}
 
-export const getOneAlbum = async albumId => {
+export const createAlbum = async (bodyData) => {
+
   try {
-    const response = await api.get(`/albums/${albumId}`);
+    const response = await api.post(`/albums`, bodyData)
 
     return response.data;
   } catch (error) {
-    throw error;
+    throw error
   }
-};
+}
+
+
+export const editAlbum = async (id, bodyData) => {
+  try {
+    const response = await api.put(`/albums/${id}`, bodyData)
+    
+    return response.data
+  } catch (error) {
+      throw error
+  }
+}
+
+

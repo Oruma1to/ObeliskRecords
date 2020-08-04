@@ -12,6 +12,7 @@ import Header from './components/shared/Header';
 import Home from './components/shared/Home'
 import Album from './components/albums/Album';
 import CreateAlbum from './components/albums/CRUD/CreateAlbum'
+import EditAlbum from './components/albums/CRUD/EditAlbum'
 
 
 
@@ -44,6 +45,9 @@ function App() {
       </Route>
       <Route path="/createalbum">
         <CreateAlbum />
+      </Route>
+      <Route path="/editalbum/:id">
+        <EditAlbum />
       </Route>
     </div>
   );
