@@ -24,6 +24,7 @@ const createUsers = async () => {
       zipcode: 10012,
       phoneNumber: '555-123-4567',
     },
+    
   ];
   await User.insertMany(users);
   console.log('Successfully created users!');

@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { logIn } from './actions'
+// import { useSelector, useDispatch } from 'react-redux'
+// import { logIn } from './actions'
 
 import Signin from './components/users/Signin'
 import Signup from './components/users/Signup'
@@ -16,8 +16,8 @@ import CreateAlbum from './components/albums/CRUD/CreateAlbum'
 
 
 function App() {
-  const isLogged = useSelector(state => state.isLogged)
-  const dispatch = useDispatch()
+  // const isLogged = useSelector(state => state.isLogged)
+  // const dispatch = useDispatch()
 
   // on component did mount, try to log in and set the user 
 
