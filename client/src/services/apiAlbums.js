@@ -10,7 +10,7 @@ export const getAlbums = async () => {
   }
 }
 
-export const getAlbum = async (id) => {
+export const getOneAlbum = async (id) => {
   try {
     const response = await api.get(`/albums/${id}`)
     

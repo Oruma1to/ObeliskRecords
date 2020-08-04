@@ -3,7 +3,7 @@ import { Redirect, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logIn } from '../../../actions'
 import { verifyuser } from '../../../services/apiUsers'
-import { editAlbum, getAlbum } from '../../../services/apiAlbums'
+import { editAlbum, getOneAlbum } from '../../../services/apiAlbums'
 import './CRUD.css'
 
 
@@ -63,7 +63,7 @@ export default function EditAlbum() {
   // load an album from the backend 
   const loadAlbum = async (id) => {
     try {
-      const response = await getAlbum(id)
+      const response = await getOneAlbum(id)
       console.log(response)
 
       setAlbumName(response.albumName)
