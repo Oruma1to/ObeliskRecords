@@ -10,6 +10,7 @@ const createAlbums = async () => {
       artistName: 'Linkin Park',
       year: 2000,
       genre: 'Alternative Rock',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -29,6 +30,7 @@ const createAlbums = async () => {
       artistName: 'Bad Bunny',
       year: 2020,
       genre: 'Reggaeton',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -49,6 +51,7 @@ const createAlbums = async () => {
       artistName: 'Current Joys',
       year: 2018,
       genre: 'Reggaeton',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -68,6 +71,7 @@ const createAlbums = async () => {
       artistName: 'Cigarettes After Sex',
       year: 2017,
       genre: 'Reggaeton',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -88,6 +92,7 @@ const createAlbums = async () => {
       artistName: 'Taylor Swift',
       year: 2020,
       genre: 'Alternative',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -108,6 +113,7 @@ const createAlbums = async () => {
       artistName: 'Logic',
       year: 2020,
       genre: 'Hip-Hop',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -128,6 +134,7 @@ const createAlbums = async () => {
       artistName: 'Coldplay',
       year: 2008,
       genre: 'Alternative',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -137,7 +144,7 @@ const createAlbums = async () => {
         {
           trackNumber: 2,
           songTitle: 'Cemeteries of London',
-          length: 'Lost!',
+          length: '5:50',
         },
       ],
       albumCover:
@@ -148,6 +155,7 @@ const createAlbums = async () => {
       artistName: 'Muse',
       year: 2009,
       genre: 'Alternative Rock',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -168,6 +176,7 @@ const createAlbums = async () => {
       artistName: 'Hot Fuss',
       year: 2004,
       genre: 'Rock',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -188,6 +197,7 @@ const createAlbums = async () => {
       artistName: 'Shakira',
       year: 2001,
       genre: 'Pop',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -208,6 +218,7 @@ const createAlbums = async () => {
       artistName: 'The Weeknd',
       year: 2018,
       genre: 'R&B',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -228,6 +239,7 @@ const createAlbums = async () => {
       artistName: 'Drake',
       year: 2016,
       genre: 'Hip-Hop',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -248,6 +260,7 @@ const createAlbums = async () => {
       artistName: 'Sugar Ray',
       year: 1999,
       genre: 'Pop',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -268,6 +281,7 @@ const createAlbums = async () => {
       artistName: 'Smash Mouth',
       year: 1999,
       genre: 'Alternative',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
@@ -288,6 +302,7 @@ const createAlbums = async () => {
       artistName: 'Audioslave',
       year: 2002,
       genre: 'Rock',
+      price: 10.99,
       tracks: [
         {
           trackNumber: 1,
