@@ -1,14 +1,15 @@
-import api from './apiConfig'
+import api from './apiConfig';
 
 export const getAlbums = async () => {
   try {
     const response = await api.get(`/albums`)
-    
-    return response.data
+
+    return response.data;
   } catch (error) {
-      throw error
+    throw error
   }
-}
+};
+
 
 export const getOneAlbum = async (id) => {
   try {
@@ -21,12 +22,13 @@ export const getOneAlbum = async (id) => {
 }
 
 export const createAlbum = async (bodyData) => {
+
   try {
     const response = await api.post(`/albums`, bodyData)
-    
-    return response.data
+
+    return response.data;
   } catch (error) {
-      throw error
+    throw error
   }
 }
 
@@ -40,4 +42,5 @@ export const editAlbum = async (id, bodyData) => {
       throw error
   }
 }
+
 

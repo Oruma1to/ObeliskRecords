@@ -1,0 +1,60 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.first-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  border: 2px solid black;
+  padding: 5px 0;
+  width: 800px;
+  margin: 30px 30px 0 30px;
+}
+.album-image {
+  height: 400px;
+  width: 400px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 300px;
+  margin: auto 0;
+}
+.albumName {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+.album-description {
+  margin-top: 20px;
+}
+.album-price {
+  margin-top: 20%;
+}
+.add-to-cart-button {
+  margin: 10px auto;
+  width: 150px;
+  height: 40px;
+  background-color: burlywood;
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.second-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 800px;
+  margin: 0 30px;
+  padding: 5px 0;
+}
+.track-info {
+  display: flex;
+}
+h4 {
+  margin: 0 10px;
+}
