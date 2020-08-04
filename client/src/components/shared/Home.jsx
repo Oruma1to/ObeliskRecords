@@ -3,6 +3,7 @@ import Albums from '../albums/Albums'
 import Search from '../albums/Search'
 import './Home.css'
 
+
 export default function Home() {
   return (
     <>
@@ -13,5 +14,5 @@ export default function Home() {
         <div className="home-albums"><Albums /></div>
       </div>
     </>
-  )
+  );
 }

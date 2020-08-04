@@ -3,25 +3,26 @@ import { getAlbums } from '../../services/apiAlbums'
 import { Link } from 'react-router-dom'
 import './Albums.css'
 
-export default function Albums() {
 
-  const [albums, setAlbums] = useState([])
+export default function Albums() {
+  const [albums, setAlbums] = useState([]);
 
   useEffect(() => {
-    pullAlbums()
-  }, [])
+    pullAlbums();
+  }, []);
 
   const pullAlbums = async () => {
     try {
       const response = await getAlbums();
-      console.log(response)
-      setAlbums(response)
+      console.log(response);
+      setAlbums(response);
     } catch (error) {
       console.log(error);
       this.setState({
-        status: error.message || 'Failed to load albums.'
-      })
+        status: error.message || 'Failed to load albums.',
+      });
     }
+
   }
   return (
     <>
