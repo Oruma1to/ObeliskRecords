@@ -1,45 +1,41 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react';
+import { getAlbums } from '../../services/apiAlbums';
+import { Link } from 'react-router-dom';
+import './Albums.css';
 
-import { getAlbums } from '../../services/apiAlbums'
+export default function Albums() {
+  const [albums, setAlbums] = useState([]);
 
-export default class Albums extends Component {
-  constructor() {
-    super()
+  useEffect(() => {
+    pullAlbums();
+  }, []);
 
-    this.state = {
-      albums: [],
-      status: 'Loading...'
-    };
-  } 
-
-  async componentDidMount() {
+  const pullAlbums = async () => {
     try {
       const response = await getAlbums();
-
-      console.log(response)
-
-      this.setState({
-        status: '',
-        albums: response 
-      })
+      console.log(response);
+      setAlbums(response);
     } catch (error) {
       console.log(error);
       this.setState({
-        status: error.message || 'Failed to load albums.'
-      })
+        status: error.message || 'Failed to load albums.',
+      });
     }
-  }
-
-  render() {
-    return (
-      <div>
-        { this.state.status ? <h2>{this.state.status}</h2> : null}
-        {
-          this.state.albums.map((album, ind) => {
-            return <p key={ind}>{album.albumName}</p>
-          })
-        }
-      </div>
-    )
-  }
+  };
+  return (
+    <>
+      {albums.map(album => {
+        return (
+          <div key={album.id}>
+            <Link className='album-container' to={`/albums/${album._id}`}>
+              <img className='album-cover' src={album.albumCover} />
+              <p className='album-title'>{album.artistName}</p>
+              <p className='album-name'>{album.albumName}</p>
+              <p className='album-year'>{album.year}</p>
+            </Link>
+          </div>
+        );
+      })}
+    </>
+  );
 }
