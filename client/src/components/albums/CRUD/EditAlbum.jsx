@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useEffect } from 'react-router-dom'
 import { editAlbum, getOneAlbum } from '../../../services/apiAlbums'
 import './CRUD.css'
 
@@ -22,6 +22,12 @@ export default function EditAlbum() {
   const [length, setLength] = useState('0:00')
 
   const { id } = useParams()
+
+  // load the album on componentDidMount 
+  useEffect(() => {
+    loadAlbum()
+  }, [])
+  
 
   // load an album from the backend 
   const loadAlbum = async (id) => {
