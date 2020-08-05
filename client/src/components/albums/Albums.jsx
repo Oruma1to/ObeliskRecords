@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { getAlbums } from '../../services/apiAlbums'
 import { Link } from 'react-router-dom'
+import Search from './Search'
 import './Albums.css'
 
 
@@ -26,7 +27,9 @@ export default function Albums() {
   }
   return (
     <>
+      <div className="home-search"><Search /></div>
       <div className="albums-container">
+        
         {albums.map(album => {
           return <div key={album.albumName}>
             <Link className="album-container" to={`/albums/${album._id}`}>
