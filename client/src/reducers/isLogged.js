@@ -3,7 +3,8 @@ const loggedReducer = (state = null, action) => {
     case 'SIGNIN':
       return action.payload
     case 'SIGNOUT':
-      return null 
+      localStorage.removeItem('token')
+      return null
     default:
       return state
   }

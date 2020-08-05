@@ -16,14 +16,14 @@ const userOfRequest = (req) => {
   try {
     const token = req.headers.authorization.split(" ")[1]
     const legit = jwt.verify(token, TOKEN_KEY)
-    
+
     if (legit) {
       return legit
     }
-    return false 
+    return false
   } catch (error) {
     console.log(error)
-    return false 
+    return false
   }
 }
 
@@ -113,7 +113,7 @@ const verifyUser = async (req, res) => {
   try {
     const legit = await userOfRequest(req);
 
-    if (legit) return res.status(200).json(legit);
+    if (legit) return res.status(200).json({ user: legit });
     return res.status(401).send('Not Authorized');
   } catch (error) {
     res.status(500).send('Verify User - Server Error');
