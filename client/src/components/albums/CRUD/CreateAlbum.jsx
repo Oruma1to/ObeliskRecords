@@ -19,6 +19,7 @@ export default function CreateAlbum() {
   const [albumName, setAlbumName] = useState('')
   const [artistName, setArtistName] = useState('')
   const [year, setYear] = useState(2000)
+  const [price, setPrice] = useState(10.99)
   const [genre, setGenre] = useState('')
   const [albumCover, setAlbumCover] = useState('')
   const [tracks, setTracks] = useState([])
@@ -87,7 +88,7 @@ export default function CreateAlbum() {
     
     try {
       const response = await createAlbum({
-        albumName, artistName, year, genre, albumCover, tracks
+        albumName, artistName, year, price, genre, albumCover, tracks
       })
 
       console.log(response)
@@ -144,6 +145,13 @@ export default function CreateAlbum() {
             type="text"
             value={genre}
             onChange={e => setGenre(e.target.value)}
+          />
+
+          <label htmlFor="price">Price</label>
+          <input name="price"
+            type="number"
+            value={price}
+            onChange={e => setPrice(e.target.value)}
           />
 
           {/* preview image url to make sure it shows */}

@@ -4,7 +4,7 @@ import { getOneAlbum } from '../../services/apiAlbums';
 import './Album.css';
 
 export default function Album() {
-  const [album, setAlbum] = useState([]);
+  const [album, setAlbum] = useState(null);
   const [track, setTracks] = useState([]);
   let params = useParams();
 
@@ -24,36 +24,39 @@ export default function Album() {
       console.log(error);
     }
   };
-  return (
-    <div className='main-container'>
-      <div className='first-container'>
-        <img className='album-image' src={album.albumCover} alt={album.albumName} />
-        <div className='description'>
-          <h1 className='albumName'>{album.albumName}</h1>
-          <h3>Artist: {album.artistName}</h3>
-          <h3>Genre: {album.genre}</h3>
-          <h3>year: {album.year}</h3>
-          <p className='album-description'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quas tempora, commodi nobis
-            odio natus aliquam voluptatum atque totam voluptas beatae suscipit tempore minima
-            corrupti facere alias ad vero maiores.
+
+  if (album === null) {
+    return <h1>Loading...</h1>
+  } else {
+    return (
+      <div className='main-container'>
+        <div className='first-container'>
+          <img className='album-image' src={album.albumCover} alt={album.albumName} />
+          <div className='description'>
+            <h1 className='albumName'>{album.albumName}</h1>
+            <h3>Artist: {album.artistName}</h3>
+            <h3>Genre: {album.genre}</h3>
+            <h3>year: {album.year}</h3>
+            <p className='album-description'>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quas tempora, commodi nobis
+              odio natus aliquam voluptatum atque totam voluptas beatae suscipit tempore minima
+              corrupti facere alias ad vero maiores.
           </p>
-          <h3 className='album-price'>Price: $10.99</h3>
+            <h3 className='album-price'>${album.price}</h3>
+          </div>
+        </div>
+        <button className='add-to-cart-button'>Add to Cart</button>
+        <div className='second-container'>
+          <h3>Track Sample</h3>
+          {album.tracks.map(track => (
+            <div className='track-info'>
+              <h4> Track : {track.trackNumber}</h4>
+              <h4>Track Name: {track.songTitle}</h4>
+              <h4> length: {track.length}</h4>
+            </div>
+          ))}
         </div>
       </div>
-      <button className='add-to-cart-button'>Add to Cart</button>
-      <div className='second-container'>
-        <h3>Track Sample</h3>
-        {album.tracks
-          ? album.tracks.map(track => (
-              <div className='track-info'>
-                <h4> Track : {track.trackNumber}</h4>
-                <h4>Track Name: {track.songTitle}</h4>
-                <h4> length: {track.length}</h4>
-              </div>
-            ))
-          : ''}
-      </div>
-    </div>
-  );
+    );
+  }
 }
