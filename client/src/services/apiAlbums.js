@@ -14,10 +14,10 @@ export const getAlbums = async () => {
 export const getOneAlbum = async (id) => {
   try {
     const response = await api.get(`/albums/${id}`)
-    
+
     return response.data
   } catch (error) {
-      throw error
+    throw error
   }
 }
 
@@ -36,11 +36,20 @@ export const createAlbum = async (bodyData) => {
 export const editAlbum = async (id, bodyData) => {
   try {
     const response = await api.put(`/albums/${id}`, bodyData)
-    
+
     return response.data
   } catch (error) {
-      throw error
+    throw error
   }
 }
 
+export const searchBar = async (term) => {
+  try {
+    const response = await api.get(`/search/${term}`)
+
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
 
