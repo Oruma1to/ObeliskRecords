@@ -17,4 +17,7 @@ router.post('/albums', controllers.createAlbum);
 router.put('/albums/:id', controllers.editAlbum);
 router.delete('/albums/:id', controllers.deleteAlbum);
 
+//Terms
+router.get('/search/:terms', controllers.searchBar);
+
 module.exports = router;

@@ -215,9 +215,56 @@ const deleteAlbum = async (req, res) => {
   }
 }
 
+async function searchBar(req, res) {
+  try {
+
+    // the search terms string is stored on /search/:terms
+    // same with subcategory
+    const searchTerms = req.params.terms
+
+    // multiple search terms are separated by spaces
+    // we want to search multiple fields (commented above)
+    const relevantFields = ["albumName", "artistName", "genre"]
+
+    // for each field we check if there are matches
+    // then add them to an array 
+    let foundMatches = []
+
+    for (let field of relevantFields) {
+      // we use '$regex' with the option 'i' to make it 
+      // case insensitive 
+      // we also use | in the search term to mean OR
+      const pattern = searchTerms
+
+      const findArg = {
+        [field]: { '$regex': pattern, '$options': 'i' }
+      }
+
+      const matchedAlbums = await Album.find(findArg)
+      // filter out repeated products (same id)
+      // make a hash table of seen ids in O(n) time and check against it in O(m) time (n and m are the lengths of the 2 arrays)
+      let seenIDs = {}
+
+      for (let album of foundMatches) {
+        seenIDs[album['_id']] = true  
+      }
+
+      for (let mAlbum of matchedAlbums) {
+        if (!seenIDs[mAlbum['_id']]) {
+          seenIDs[mAlbum['_id']] = true
+          foundMatches.push(mAlbum)
+        }
+      }
+    }
+    res.json(foundMatches)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 // module export 
 module.exports = {
   getUsers, signUp, signIn, verifyUser, updateUser,
-  getAlbums, getAlbum, createAlbum, editAlbum, deleteAlbum
+  getAlbums, getAlbum, createAlbum, editAlbum, deleteAlbum, searchBar
 };

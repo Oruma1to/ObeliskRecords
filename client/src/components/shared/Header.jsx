@@ -33,11 +33,11 @@ export default function Header() {
           ?
           <Link to='/signup' className='nav-link'>Sign Up</Link>
           :
-          <button className='sign-out' onClick={handleSignOut}>Sign Out</button>
+          <Link to="/" className='nav-link signout' onClick={handleSignOut}>Sign Out</Link>
         }
         {admin_key
           ?
-          <Link to="/createalbum">Post Album</Link>
+          <Link to="/createalbum" className='nav-link'>Post Album</Link>
           :
           null
         }

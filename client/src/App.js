@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     initialize()
-  },[]
+  }, []
   )
 
 
@@ -34,7 +34,7 @@ function App() {
       const response = await verifyuser()
       console.log(response)
       dispatch(logIn(response))
-    } catch(error) {
+    } catch (error) {
       console.log(error)
     }
   }
@@ -42,6 +42,11 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <div style={
+        {
+          height: '100px'
+        }
+      }></div>
       <Route path="/" exact>
         <Home />
         {/* <h1>IsLogged {isLogged ? "yes" : "no"}</h1>
