@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Redirect, useParams } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { logIn } from '../../../actions'
-import { verifyuser } from '../../../services/apiUsers'
+import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { editAlbum, getOneAlbum } from '../../../services/apiAlbums'
 import './CRUD.css'
-
 
 
 export default function EditAlbum() {
@@ -14,7 +10,6 @@ export default function EditAlbum() {
 
   const [update, setUpdate] = useState(true)
   const forceUpdate = () => setUpdate(!update)
-  const [logInAttempt, setLogInAttempt] = useState(true)
 
   const [albumName, setAlbumName] = useState('')
   const [artistName, setArtistName] = useState('')
@@ -27,39 +22,6 @@ export default function EditAlbum() {
   const [length, setLength] = useState('0:00')
 
   const { id } = useParams()
-
-  // check redux for login info
-  const isLogged = useSelector(state => state.isLogged)
-
-  // on page load try to verify user with jwt 
-  useEffect(() => {
-    verifyAndStore()
-    loadAlbum(id)
-  }, [])
-
-  // async function to be outside of useEffect 
-  const dispatch = useDispatch()
-  const verifyAndStore = async () => {
-    // if no login data in redux, grab it 
-    if (isLogged === null) {
-      try {
-        const response = await verifyuser()
-        console.log(response)
-        dispatch(logIn(response))
-        if (!response.user.admin_key) {
-          setLogInAttempt(false)
-        }
-      } catch (error) {
-        console.log(error)
-        setLogInAttempt(false)
-      }
-    } else {
-      // if not an admin, refuse login 
-      if (isLogged.user.admin_key) {
-        setLogInAttempt(false)
-      }
-    }
-  }
 
   // load an album from the backend 
   const loadAlbum = async (id) => {
@@ -120,7 +82,6 @@ export default function EditAlbum() {
 
   console.log(albumName, artistName, year, genre, albumCover, tracks)
 
-  if (logInAttempt) {
     return (
       <div>
       
@@ -221,7 +182,5 @@ export default function EditAlbum() {
 
       </div>
     )
-  } else {
-    return <Redirect to="/" />
-  }
+
 }

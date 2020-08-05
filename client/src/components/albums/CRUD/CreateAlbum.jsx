@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Redirect } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { logIn } from '../../../actions'
-import { verifyuser } from '../../../services/apiUsers'
 import { createAlbum } from '../../../services/apiAlbums'
 import './CRUD.css'
 
@@ -14,7 +10,6 @@ export default function CreateAlbum() {
 
   const [update, setUpdate] = useState(true)
   const forceUpdate = () => setUpdate(!update)
-  const [logInAttempt, setLogInAttempt] = useState(true)
 
   const [albumName, setAlbumName] = useState('')
   const [artistName, setArtistName] = useState('')
@@ -26,37 +21,6 @@ export default function CreateAlbum() {
   const [songTitle, setSongTitle] = useState('')
   const [length, setLength] = useState('0:00')
 
-  // check redux for login info
-  const isLogged = useSelector(state => state.isLogged)
-
-  // on page load try to verify user with jwt 
-  useEffect(() => {
-    verifyAndStore()
-  }, [])
-
-  // async function to be outside of useEffect 
-  const dispatch = useDispatch()
-  const verifyAndStore = async () => {
-    // if no login data in redux, grab it 
-    if (isLogged === null) {
-      try {
-        const response = await verifyuser()
-        console.log(response)
-        dispatch(logIn(response))
-        if (!response.user.admin_key) {
-          setLogInAttempt(false)
-        }
-      } catch (error) {
-        console.log(error)
-        setLogInAttempt(false)
-      }
-    } else {
-      // if not an admin, refuse login 
-      if (isLogged.user.admin_key) {
-        setLogInAttempt(false)
-      }
-    }
-  }
 
   // methods to add and remove tracks in editor (local state only)
   const addTrack = () => {
@@ -113,7 +77,6 @@ export default function CreateAlbum() {
 
   console.log(albumName, artistName, year, genre, albumCover, tracks)
 
-  if (logInAttempt) {
     return (
       <div>
       
@@ -214,7 +177,5 @@ export default function CreateAlbum() {
 
       </div>
     )
-  } else {
-    return <Redirect to="/" />
-  }
+
 }
