@@ -1,19 +1,28 @@
+.header-wrapper {
+  position: fixed;
+  width: 100vw
+}
+
 .header-nav {
-  border: 2px solid black;
   display: flex;
   justify-content: space-evenly;
   height: 100px;
-
+  background-color: #1a1a1a;
 }
 
 .nav-link {
   text-decoration: none;
-  color: blue;
+  color: #fff;
   font-size: 1.5rem;
   margin: auto
 }
 
 .cart {
   padding: 10px;
-  font-size: 1rem
+  font-size: 1rem;
+  background-color: #ff6763;
+  border-color: #ff6763;
+  border-radius: 10px
 }
+
+/*   color: #ff6763; */
