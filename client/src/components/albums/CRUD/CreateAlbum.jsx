@@ -43,7 +43,7 @@ export default function CreateAlbum() {
         const response = await verifyuser()
         console.log(response)
         dispatch(logIn(response))
-        if (!response.admin_key) {
+        if (!response.user.admin_key) {
           setLogInAttempt(false)
         }
       } catch (error) {
@@ -52,7 +52,7 @@ export default function CreateAlbum() {
       }
     } else {
       // if not an admin, refuse login 
-      if (isLogged.admin_key) {
+      if (isLogged.user.admin_key) {
         setLogInAttempt(false)
       }
     }
