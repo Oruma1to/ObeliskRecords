@@ -21,7 +21,9 @@ export default class Search extends Component {
     try {
       const response = await searchBar(this.state.search)
       console.log(response)
+      this.props.setAlbums(response)
       this.setState({ search: '' })
+      this.props.setCanReset(true)
     } catch (error) {
       console.log(error)
     }

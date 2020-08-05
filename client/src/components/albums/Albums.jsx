@@ -7,6 +7,7 @@ import './Albums.css'
 
 export default function Albums() {
   const [albums, setAlbums] = useState([]);
+  const [canReset, setCanReset] = useState(false)
 
   useEffect(() => {
     pullAlbums();
@@ -23,13 +24,18 @@ export default function Albums() {
         status: error.message || 'Failed to load albums.',
       });
     }
-
   }
+
+  const handleReset = async () => {
+    pullAlbums()
+    setCanReset(false)
+  }
+
   return (
     <>
-      <div className="home-search"><Search /></div>
+      <div className="home-search"><Search setCanReset={setCanReset} setAlbums={setAlbums} /></div>
       <div className="albums-container">
-        
+
         {albums.map(album => {
           return <div key={album.albumName}>
             <Link className="album-container" to={`/albums/${album._id}`}>
@@ -40,6 +46,15 @@ export default function Albums() {
             </Link>
           </div>
         })}
+        {canReset
+          ?
+          <button
+            onClick={handleReset}
+          >Reset</button>
+          :
+          null
+        }
+
       </div>
     </>
   )
