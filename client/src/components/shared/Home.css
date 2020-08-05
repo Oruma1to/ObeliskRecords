@@ -6,10 +6,11 @@
 .site-title {
   font-size: 3rem;
   padding: .8rem;
-  background-color: peachpuff;
   width: 50%;
   margin: 0 auto;
+  margin-top: 100px;
   text-align: center;
+  color: #ff6763;
 }
 
 .home-search {

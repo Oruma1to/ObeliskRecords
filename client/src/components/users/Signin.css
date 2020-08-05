@@ -1,0 +1,7 @@
+.signin-container{
+    padding: 150px;
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+}

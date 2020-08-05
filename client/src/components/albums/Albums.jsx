@@ -31,9 +31,9 @@ export default function Albums() {
           return <div key={album.albumName}>
             <Link className="album-container" to={`/albums/${album._id}`}>
               <img className="album-cover" src={album.albumCover} alt={album.albumName} />
-              <p className="album-title">{album.artistName}</p>
-              <p className="album-name">{album.albumName}</p>
-              <p className="album-year">{album.year}</p>
+              <p className="album-title aText">{album.artistName}</p>
+              <p className="album-name aText">{album.albumName}</p>
+              <p className="album-year aText">{album.year}</p>
             </Link>
           </div>
         })}
