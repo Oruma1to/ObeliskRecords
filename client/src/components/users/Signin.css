@@ -4,4 +4,13 @@
     width: 50%;
     margin: 0 auto;
     justify-content: center;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.input-lbl {
+  text-align: center;
+  height:30px;
+  width: 200px;
+  border: 2px solid grey;
 }

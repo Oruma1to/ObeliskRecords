@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { logIn } from './actions'
+import { useDispatch } from 'react-redux'
+import { verifyuser } from './services/apiUsers'
+import { logIn } from './actions'
 
 import Signin from './components/users/Signin'
 import Signup from './components/users/Signup'
@@ -18,10 +19,25 @@ import EditAlbum from './components/albums/CRUD/EditAlbum'
 
 function App() {
   // const isLogged = useSelector(state => state.isLogged)
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   // on component did mount, try to log in and set the user 
 
+  useEffect(() => {
+    initialize()
+  },[]
+  )
+
+
+  const initialize = async () => {
+    try {
+      const response = await verifyuser()
+      console.log(response)
+      dispatch(logIn(response))
+    } catch(error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div className="App">
