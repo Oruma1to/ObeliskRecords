@@ -50,7 +50,7 @@ export default function Signin() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </form>
-        <Link className="signin-btn">Submit</Link>
+        <Link className="signin-btn" onClick={handleSubmit}>Submit</Link>
         <p className="signin-su">Don't have an account? <Link to="/signup" className="signup-link">Sign Up!</Link></p>
       </div>
     </>

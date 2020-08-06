@@ -33,28 +33,36 @@ export default function Album() {
         <div className='first-container'>
           <img className='album-image' src={album.albumCover} alt={album.albumName} />
           <div className='description'>
-            <h1 className='albumName'>{album.albumName}</h1>
-            <h3>Artist: {album.artistName}</h3>
-            <h3>Genre: {album.genre}</h3>
-            <h3>year: {album.year}</h3>
+            <p className='albumName'>{album.albumName}</p>
+            <p className="desc-text artist">Artist: {album.artistName}</p>
+            <p className="desc-text">Genre: {album.genre}</p>
+            <p className="desc-text">year: {album.year}</p>
             <p className='album-description'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quas tempora, commodi nobis
               odio natus aliquam voluptatum atque totam voluptas beatae suscipit tempore minima
               corrupti facere alias ad vero maiores.
           </p>
-            <h3 className='album-price'>${album.price}</h3>
+            <p className='album-price'>${album.price}</p>
           </div>
         </div>
         <button className='add-to-cart-button'>Add to Cart</button>
         <div className='second-container'>
-          <h3>Track Sample</h3>
+          <div className="second-wrapper">
+          <div className="album-details">
+            <p className="trackNum">Track #</p>
+            <p className="trackName">Track Name</p>
+            <p className="trackLength">Length</p>
+          </div>
           {album.tracks.map(track => (
             <div className='track-info'>
-              <h4> Track : {track.trackNumber}</h4>
-              <h4>Track Name: {track.songTitle}</h4>
-              <h4> length: {track.length}</h4>
+              <p>{track.trackNumber}</p>
+              <br/>
+              <p>{track.songTitle}</p>
+              <br/>
+              <p>{track.length}</p>
             </div>
           ))}
+        </div>
         </div>
       </div>
     );
