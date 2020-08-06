@@ -43,6 +43,16 @@ export const editAlbum = async (id, bodyData) => {
   }
 }
 
+export const deleteAlbum = async (id) => {
+  try {
+    const response = await api.delete(`/albums/${id}`)
+
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+
 export const searchBar = async (term) => {
   try {
     const response = await api.get(`/search/${term}`)

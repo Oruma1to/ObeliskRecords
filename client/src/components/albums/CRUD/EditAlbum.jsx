@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { editAlbum, getOneAlbum } from '../../../services/apiAlbums'
+import { editAlbum, getOneAlbum, deleteAlbum } from '../../../services/apiAlbums'
 import './CRUD.css'
 
 
@@ -25,7 +25,7 @@ export default function EditAlbum() {
 
   // load the album on componentDidMount 
   useEffect(() => {
-    loadAlbum()
+    loadAlbum(id)
   }, [])
   
 
@@ -81,6 +81,19 @@ export default function EditAlbum() {
       })
 
       console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  // function for delete button - irreversible once confirmed!
+  const handleDelete = async () => {
+    try {
+      const confirmDelete = window.confirm('Confirm deleting this album? WARNING: IRREVERSIBLE!')
+      if (confirmDelete) {
+        const response = await deleteAlbum(id)
+        console.log(response)
+      }
     } catch (error) {
       console.log(error)
     }
@@ -186,6 +199,7 @@ export default function EditAlbum() {
           <button>Submit</button>
         </form>
 
+        <button type="button" onClick={handleDelete}>Delete Album</button>
       </div>
     )
 

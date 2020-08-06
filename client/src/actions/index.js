@@ -1,3 +1,5 @@
+// actions for counter
+
 export const increment = (num = 1) => {
   return {
     type:'INCREMENT',
@@ -12,6 +14,8 @@ export const decrement = (num = 1) => {
   }
 }
 
+// actions for isLogged
+
 export const logIn = (user) => {
   return {
     type: 'SIGNIN',
@@ -22,5 +26,21 @@ export const logIn = (user) => {
 export const logOut = () => {
   return {
     type: 'SIGNOUT'
+  }
+}
+
+// actions for shoppingCart 
+
+export const addItem = (item) => {
+  return {
+    type: 'ADDITEM',
+    payload: item 
+  }
+}
+
+export const removeItem = (removeByIndex) => {
+  return {
+    type: 'REMOVEITEM',
+    payload: removeByIndex
   }
 }

@@ -20,9 +20,6 @@ export default function Albums() {
       setAlbums(response);
     } catch (error) {
       console.log(error);
-      this.setState({
-        status: error.message || 'Failed to load albums.',
-      });
     }
   }
 
