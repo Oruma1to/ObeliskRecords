@@ -1,16 +1,48 @@
 .signin-container{
-    padding: 150px;
     display: flex;
-    width: 50%;
-    margin: 0 auto;
-    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    margin:0 auto;
+    margin-top: 10%;
+    padding: 60px 0px;
     border: 1px solid black;
     text-align: center;
+    background-color: black;
+}
+
+.signin-title {
+    color: #ff6763;
+    font-size: 3rem;
+}
+
+.signin-form {
+  margin-top: 10%;
 }
 
 .input-lbl {
   text-align: center;
   height:30px;
-  width: 200px;
+  width: 70%;
   border: 2px solid grey;
+  margin-top: 10px
+}
+
+.signin-btn {
+  color: white;
+  text-decoration: none;
+  padding: 10px 1px;
+  border-radius: 8px;
+  width: 50%;
+  background-color: #ff6763;
+  margin: 10% auto 0 auto;
+}
+
+.signin-su {
+  color: white;
+  margin-top: 10%;
+}
+
+.signup-link {
+  color: #ff6763;
+  text-decoration: none;
 }
