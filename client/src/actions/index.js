@@ -1,16 +1,8 @@
-// actions for counter
+// actions for forcing update on redux 
 
-export const increment = (num = 1) => {
+export const reduxForceUpdate = () => {
   return {
-    type:'INCREMENT',
-    payload: num
-  }
-}
-
-export const decrement = (num = 1) => {
-  return {
-    type: 'DECREMENT',
-    payload: num
+    type:'FORCEUPDATE'
   }
 }
 
@@ -38,9 +30,23 @@ export const addItem = (item) => {
   }
 }
 
-export const removeItem = (removeByIndex) => {
+export const removeItem = (removalIndex) => {
   return {
     type: 'REMOVEITEM',
-    payload: removeByIndex
+    payload: removalIndex
+  }
+}
+
+export const incrementItem = (incrementIndex) => {
+  return {
+    type: 'INCREMENTITEM',
+    payload: incrementIndex
+  }
+}
+
+export const removeItemCompletely = (removalIndex) => {
+  return {
+    type: 'REMOVEITEMCOMPLETELY',
+    payload: removalIndex
   }
 }

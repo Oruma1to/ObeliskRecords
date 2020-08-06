@@ -1,0 +1,11 @@
+.shopping-cart-item {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.shopping-cart-button {
+  font-size: 18px;
+  padding: 5px 10px;
+}
