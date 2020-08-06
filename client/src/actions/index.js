@@ -38,9 +38,9 @@ export const addItem = (item) => {
   }
 }
 
-export const removeItem = (removeByIndex) => {
+export const removeItem = (removalIndex) => {
   return {
     type: 'REMOVEITEM',
-    payload: removeByIndex
+    payload: removalIndex
   }
 }

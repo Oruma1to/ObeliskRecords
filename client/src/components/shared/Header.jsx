@@ -41,9 +41,9 @@ export default function Header() {
           :
           null
         }
-        <button to='/cart' className='nav-link cart'>
+        <Link to='/cart' className='nav-link cart'>
           Shopping Cart
-        </button>
+        </Link>
       </ul>
     </div>
   );

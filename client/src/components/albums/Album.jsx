@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOneAlbum } from '../../services/apiAlbums';
 import './Album.css';
+import AddItem from '../shoppingCart/AddItem'
 
 export default function Album() {
   const [album, setAlbum] = useState(null);
@@ -45,7 +46,7 @@ export default function Album() {
             <p className='album-price'>${album.price}</p>
           </div>
         </div>
-        <button className='add-to-cart-button'>Add to Cart</button>
+        <AddItem album={album} />
         <div className='second-container'>
           <div className="second-wrapper">
           <div className="album-details">

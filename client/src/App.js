@@ -15,7 +15,7 @@ import Album from './components/albums/Album';
 import CreateAlbum from './components/albums/CRUD/CreateAlbum'
 import EditAlbum from './components/albums/CRUD/EditAlbum'
 
-
+import ShoppingCart from './components/shoppingCart/ShoppingCart'
 
 function App() {
   // const isLogged = useSelector(state => state.isLogged)
@@ -69,6 +69,9 @@ function App() {
       </Route>
       <Route path="/editalbum/:id">
         <EditAlbum />
+      </Route>
+      <Route exact path="/cart/">
+        <ShoppingCart />
       </Route>
     </div>
   );
