@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { addItem } from '../../actions'
+import { reduxForceUpdate, addItem } from '../../actions'
 import './AddItem.css'
 
 export default function AddItem(props) {
@@ -8,6 +8,7 @@ export default function AddItem(props) {
 
   const handleAdd = () => {
     dispatch(addItem(props.album))
+    dispatch(reduxForceUpdate())
   }
 
   if (props.album) {

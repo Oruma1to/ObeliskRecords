@@ -1,10 +1,10 @@
-import counterReducer from './counter'
+import updateReducer from './forceUpdate'
 import loggedReducer from './isLogged'
 import shoppingCartReducer from './shoppingCart'
 import { combineReducers } from 'redux'
 
 const allReducers = combineReducers({
-  counter: counterReducer,
+  forceUpdate: updateReducer,
   isLogged: loggedReducer,
   shoppingCart: shoppingCartReducer 
 })

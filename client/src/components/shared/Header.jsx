@@ -8,7 +8,11 @@ import { logOut } from '../../actions'
 export default function Header() {
 
   const isLogged = useSelector(state => state.isLogged)
+  const shoppingCart = useSelector(state => state.shoppingCart)
+  useSelector(state => state.forceUpdate)
   const dispatch = useDispatch()
+
+  const cartLength = shoppingCart.reduce((acc, curr) => acc + curr.amount, 0)
 
   const handleSignOut = () => {
     dispatch(logOut())
@@ -42,7 +46,7 @@ export default function Header() {
           null
         }
         <Link to='/cart' className='nav-link cart'>
-          Shopping Cart
+          Shopping Cart: {cartLength}
         </Link>
       </ul>
     </div>

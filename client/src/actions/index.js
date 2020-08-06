@@ -1,16 +1,8 @@
-// actions for counter
+// actions for forcing update on redux 
 
-export const increment = (num = 1) => {
+export const reduxForceUpdate = () => {
   return {
-    type:'INCREMENT',
-    payload: num
-  }
-}
-
-export const decrement = (num = 1) => {
-  return {
-    type: 'DECREMENT',
-    payload: num
+    type:'FORCEUPDATE'
   }
 }
 

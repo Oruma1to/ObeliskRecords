@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { incrementItem, removeItem, removeItemCompletely } from '../../actions'
+import { incrementItem, removeItem, removeItemCompletely, reduxForceUpdate } from '../../actions'
 import './ShoppingCart.css'
 
 export default function ShoppingCart() {
@@ -8,13 +8,14 @@ export default function ShoppingCart() {
   // set up component state(s)
   const [update, setUpdate] = useState(true)
 
-  const forceUpdate = () => {
-    setUpdate(!update)
-  }
-
   // set up variables from redux 
   const shoppingCart = useSelector(state => state.shoppingCart)
   const dispatch = useDispatch()
+
+  const forceUpdate = () => {
+    setUpdate(!update)
+    dispatch(reduxForceUpdate())
+  }
 
   // functions that use redux dispatch
   const handleAddItem = (ind) => {
