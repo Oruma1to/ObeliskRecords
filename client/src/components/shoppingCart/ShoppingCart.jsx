@@ -43,7 +43,7 @@ export default function ShoppingCart() {
             <div className="shopping-cart-item" key={ind}>
               <h3>{item.album.albumName}</h3>
               <p>Artist: {item.album.artistName}</p>
-              <p>Year: {item.album.year.toFixed(2)}</p>
+              <p>Year: {item.album.year.toFixed(0)}</p>
               <p>${item.album.price.toFixed(2)}</p>
               <p>Amount: {item.amount}</p>
               <button className="shopping-cart-button" onClick={() => handleAddItem(ind)}> + </button> 
