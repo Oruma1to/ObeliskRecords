@@ -20,4 +20,8 @@ router.delete('/albums/:id', controllers.deleteAlbum);
 //Terms
 router.get('/search/:terms', controllers.searchBar);
 
+//Shopping Cart
+router.get('/cart', controllers.getCart)
+router.put('/cart', controllers.updateCart)
+
 module.exports = router;

@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const Album = require('../models/album');
 const db = require('../db');
+const { findById } = require('../models/user');
 require('dotenv').config();
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -58,7 +59,7 @@ const signUp = async (req, res) => {
     };
 
     const token = jwt.sign(payload, TOKEN_KEY);
-    return res.status(201).json({ user, token });
+    return res.status(201).json({ user: payload, token });
   } catch (error) {
     console.log('Error in signUp');
     return res.status(400).json({ error: error.message });
@@ -77,7 +78,7 @@ const signIn = async (req, res) => {
         admin_key: user.admin_key
       };
       const token = jwt.sign(payload, TOKEN_KEY);
-      return res.status(201).json({ user, token });
+      return res.status(201).json({ user: payload , token });
     } else {
       res.status(401).send('Invalid Credentials');
     }
@@ -115,6 +116,41 @@ const verifyUser = async (req, res) => {
 
     if (legit) return res.status(200).json({ user: legit });
     return res.status(401).send('Not Authorized');
+  } catch (error) {
+    res.status(500).send('Verify User - Server Error');
+  }
+}
+
+//get Cart
+const getCart = async (req, res) => {
+  try {
+    const legit = await userOfRequest(req);
+
+    if (!legit) return res.status(401).json('Not Authorized');
+    const user = await User.findById(legit.id)
+    return res.status(200).json(user.cart)
+  } catch (error) {
+    res.status(500).send('Verify User - Server Error');
+  }
+}
+
+
+//post Cart
+const updateCart = async (req, res) => {
+  try {
+    const legit = await userOfRequest(req);
+
+    if (!legit) return res.status(401).json('Not Authorized');
+
+    await User.findByIdAndUpdate(legit.id, { cart: req.body }, { new: true }, (error, user) => {
+      if (error) {
+        return res.status(500).json({ error: error.message })
+      }
+      if (!user) {
+        return res.status(404).json({ message: "User not found!" })
+      }
+      res.status(200).json(user.cart)
+    })
   } catch (error) {
     res.status(500).send('Verify User - Server Error');
   }
@@ -246,7 +282,7 @@ async function searchBar(req, res) {
       let seenIDs = {}
 
       for (let album of foundMatches) {
-        seenIDs[album['_id']] = true  
+        seenIDs[album['_id']] = true
       }
 
       for (let mAlbum of matchedAlbums) {
@@ -266,5 +302,5 @@ async function searchBar(req, res) {
 // module export 
 module.exports = {
   getUsers, signUp, signIn, verifyUser, updateUser,
-  getAlbums, getAlbum, createAlbum, editAlbum, deleteAlbum, searchBar
+  getAlbums, getAlbum, createAlbum, editAlbum, deleteAlbum, searchBar, getCart, updateCart
 };
