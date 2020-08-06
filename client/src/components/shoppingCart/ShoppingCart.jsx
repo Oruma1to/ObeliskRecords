@@ -46,13 +46,18 @@ export default function ShoppingCart() {
               <p>Year: {item.album.year.toFixed(2)}</p>
               <p>${item.album.price.toFixed(2)}</p>
               <p>Amount: {item.amount}</p>
-              <button onClick={() => handleAddItem(ind)}>Add One</button> 
-              <button onClick={() => handleRemoveItem(ind)}>Remove One</button> 
-              <button onClick={() => handleRemoveItemAll(ind)}>Remove All</button> 
+              <button className="shopping-cart-button" onClick={() => handleAddItem(ind)}> + </button> 
+              <button className="shopping-cart-button" onClick={() => handleRemoveItem(ind)}> - </button> 
+              <button className="shopping-cart-button" onClick={() => handleRemoveItemAll(ind)}> Remove Item </button> 
             </div>
           )
         })
       }
+      <div style={{ border: "1px solid black", padding: "10px" }}>
+        Total Cart Price: ${
+          (shoppingCart.reduce((acc, curr) => acc + (curr.amount*curr.album.price), 0)).toFixed(2)
+        } 
+      </div>
     </div>
   )
 }
