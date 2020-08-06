@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { signup } from '../../services/apiUsers'
+import { Link } from 'react-router-dom'
+import './Signup.css'
 
 export default function Signin() {
 
-  const [username, setUsername] = useState(''); 
-  const [email, setEmail] = useState(''); 
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   console.log(username, password);
@@ -20,23 +22,44 @@ export default function Signin() {
   }
 
   return (
-    <div>
-      
-      <form onSubmit={handleSubmit}>
+    <>
+      <div className="signup-container">
+        <p className="signup-title">Sign Up</p>
+        <form
+          className="signup-form"
+          onSubmit={handleSubmit}>
 
-        <label htmlFor="username">Username</label>
-        <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <input
+            className="input-lbl"
+            type="text"
+            name="username"
+            placeholder="User Name"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)} />
+          <br />
 
-        <label htmlFor="email">Email</label>
-        <input type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        
-        <label htmlFor="password">Password</label>
-        <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input
+            className="input-lbl"
+            type="text"
+            name="email"
+            placeholder="E-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <br />
 
-        <button>Submit</button>
-
-      </form>
-
-    </div>
+          <input
+            className="input-lbl"
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </form>
+        <Link className="signup-btn">Submit</Link>
+        <p className="signup-su">Already have an account? <Link className="signin-link">Sign In!</Link></p>
+      </div>
+    </>
   )
 }
