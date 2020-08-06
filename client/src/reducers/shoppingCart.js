@@ -1,3 +1,6 @@
+import {updateCart} from '../services/apiCart'
+
+
 const shoppingCart = (state = [], action) => { 
   // shopping cart holds objects in the form of:
   // { album, amount }
@@ -31,6 +34,8 @@ const shoppingCart = (state = [], action) => {
 
       console.log(state)
 
+      updateCart(state)
+
       return state
     case 'REMOVEITEM':
       // try to find if item is already in cart 
@@ -46,16 +51,24 @@ const shoppingCart = (state = [], action) => {
       } else {
         state.splice(action.payload, 1)
       }
-      
+      updateCart(state)
       return state 
+    
     case 'INCREMENTITEM':
       if (action.payload < state.length) {
         state[action.payload].amount += 1
       }
+      updateCart(state)
       return state 
+    
     case 'REMOVEITEMCOMPLETELY':
-      state.splice(action.payload,1)
+      state.splice(action.payload, 1)
+      updateCart(state)
       return state 
+    
+    case 'REPLACECART':
+      return action.payload
+      
     default:
       return state 
   }

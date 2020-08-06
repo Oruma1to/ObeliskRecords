@@ -57,6 +57,11 @@ const User = new Schema(
       },
       required: [false, 'User phone number required'],
     },
+    cart: {
+      type: Array,
+      require: false,
+      default: []     
+    }
   },
   { timestamps: true }
 );

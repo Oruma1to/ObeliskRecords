@@ -50,3 +50,11 @@ export const removeItemCompletely = (removalIndex) => {
     payload: removalIndex
   }
 }
+
+export const replaceCart = (newCart) => {
+  return {
+    type: 'REPLACECART',
+    payload: newCart
+  }
+}
+
