@@ -48,6 +48,14 @@ const shoppingCart = (state = [], action) => {
       }
       
       return state 
+    case 'INCREMENTITEM':
+      if (action.payload < state.length) {
+        state[action.payload].amount += 1
+      }
+      return state 
+    case 'REMOVEITEMCOMPLETELY':
+      state.splice(action.payload,1)
+      return state 
     default:
       return state 
   }

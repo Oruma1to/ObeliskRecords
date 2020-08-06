@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { removeItem } from '../../actions'
+import { incrementItem, removeItem, removeItemCompletely } from '../../actions'
 import './ShoppingCart.css'
 
 export default function ShoppingCart() {
@@ -16,9 +16,19 @@ export default function ShoppingCart() {
   const shoppingCart = useSelector(state => state.shoppingCart)
   const dispatch = useDispatch()
 
-  // function that uses redux dispatch to remove an item 
+  // functions that use redux dispatch
+  const handleAddItem = (ind) => {
+    dispatch(incrementItem(ind))
+    forceUpdate()
+  }
+
   const handleRemoveItem = (ind) => {
     dispatch(removeItem(ind))
+    forceUpdate()
+  }
+
+  const handleRemoveItemAll = (ind) => {
+    dispatch(removeItemCompletely(ind))
     forceUpdate()
   }
 
@@ -26,6 +36,7 @@ export default function ShoppingCart() {
 
   return (
     <div>
+      { shoppingCart.length === 0 ? <h3>You have no items in your cart.</h3> : null }
       {
         shoppingCart.map((item, ind) => {
           return (
@@ -35,7 +46,9 @@ export default function ShoppingCart() {
               <p>Year: {item.album.year.toFixed(2)}</p>
               <p>${item.album.price.toFixed(2)}</p>
               <p>Amount: {item.amount}</p>
-              <button onClick={() => handleRemoveItem(ind)}>Remove From Cart</button>
+              <button onClick={() => handleAddItem(ind)}>Add One</button> 
+              <button onClick={() => handleRemoveItem(ind)}>Remove One</button> 
+              <button onClick={() => handleRemoveItemAll(ind)}>Remove All</button> 
             </div>
           )
         })

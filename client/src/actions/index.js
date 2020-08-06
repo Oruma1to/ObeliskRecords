@@ -44,3 +44,17 @@ export const removeItem = (removalIndex) => {
     payload: removalIndex
   }
 }
+
+export const incrementItem = (incrementIndex) => {
+  return {
+    type: 'INCREMENTITEM',
+    payload: incrementIndex
+  }
+}
+
+export const removeItemCompletely = (removalIndex) => {
+  return {
+    type: 'REMOVEITEMCOMPLETELY',
+    payload: removalIndex
+  }
+}
