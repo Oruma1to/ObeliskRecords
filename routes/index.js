@@ -9,6 +9,7 @@ router.get('/users', controllers.getUsers);
 router.post('/signup', controllers.signUp);
 router.post('/signin', controllers.signIn);
 router.get('/verifyuser', controllers.verifyUser);
+router.get('/users/:id', restrict, controllers.getUser);
 router.put('/users/:id', restrict, controllers.updateUser);
 //Albums
 router.get('/albums', controllers.getAlbums);
@@ -21,7 +22,7 @@ router.delete('/albums/:id', controllers.deleteAlbum);
 router.get('/search/:terms', controllers.searchBar);
 
 //Shopping Cart
-router.get('/cart', controllers.getCart)
-router.put('/cart', controllers.updateCart)
+router.get('/cart', controllers.getCart);
+router.put('/cart', controllers.updateCart);
 
 module.exports = router;
