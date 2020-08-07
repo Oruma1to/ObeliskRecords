@@ -1,6 +1,7 @@
 import {updateCart} from '../services/apiCart'
 
 
+
 const shoppingCart = (state = [], action) => { 
   // shopping cart holds objects in the form of:
   // { album, amount }

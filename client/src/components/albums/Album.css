@@ -40,16 +40,6 @@
   font-size: 1.5rem;
   color: #ff6763
 }
-.add-to-cart-button {
-  margin: 10px auto;
-  width: 150px;
-  height: 40px;
-  background-color: #ff6763;
-  border-color: #ff6763;
-  color: white;
-  border-radius: 8px;
-  font-size: 1.1rem;
-}
 
 .second-container {
   display: flex;

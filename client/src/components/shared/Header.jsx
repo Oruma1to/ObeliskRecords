@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
-import { logOut } from '../../actions'
+import { logOut, replaceCart } from '../../actions'
 
 
 export default function Header() {
@@ -16,6 +16,7 @@ export default function Header() {
 
   const handleSignOut = () => {
     dispatch(logOut())
+    dispatch(replaceCart([]))
   }
 
   let admin_key = false
@@ -33,17 +34,17 @@ export default function Header() {
           < Link to='/signin' className='nav-link'>Sign In</Link> :
           < Link to='/myprofile' className='nav-link'>My Profile</Link>
         }
-        {!isLogged
-          ?
-          <Link to='/signup' className='nav-link'>Sign Up</Link>
-          :
-          <Link to="/" className='nav-link signout' onClick={handleSignOut}>Sign Out</Link>
-        }
         {admin_key
           ?
           <Link to="/createalbum" className='nav-link'>Post Album</Link>
           :
           null
+        }
+        {!isLogged
+          ?
+          <Link to='/signup' className='nav-link'>Sign Up</Link>
+          :
+          <Link to="/" className='nav-link signout' onClick={handleSignOut}>Sign Out</Link>
         }
         <Link to='/cart' className='nav-link cart'>
           Shopping Cart: {cartLength}
