@@ -36,7 +36,11 @@ export default function Header() {
         }
         {admin_key
           ?
-          <Link to="/createalbum" className='nav-link'>Post Album</Link>
+          <>
+            <Link to="/createalbum" className='nav-link'>Post Album</Link>
+            <p className='nav-link signout admin'>(Admin)</p>
+
+          </>
           :
           null
         }
