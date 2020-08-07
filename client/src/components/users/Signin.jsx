@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { signin } from '../../services/apiUsers'
 import { useDispatch } from 'react-redux'
 import { logIn } from '../../actions'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './Signin.css'
 
 export default function Signin() {
@@ -14,6 +14,9 @@ export default function Signin() {
 
   console.log(username, password);
 
+  let history = useHistory()
+  console.log(history)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,6 +26,7 @@ export default function Signin() {
 
     console.log(response);
     dispatch(logIn(response))
+    history.push('/')
   }
 
   return (
