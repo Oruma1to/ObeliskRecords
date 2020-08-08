@@ -31,7 +31,7 @@ function App() {
   const initialize = async () => {
     try {
       const response = await verifyuser();
-      console.log(response);
+      // console.log(response);
       dispatch(logIn(response));
     } catch (error) {
       console.log(error);
