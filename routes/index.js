@@ -5,7 +5,7 @@ const restrict = require('../helpers/index');
 const router = Router();
 
 //Users
-router.get('/users', controllers.getUsers);
+router.get('/users', restrict, controllers.getUsers);
 router.post('/signup', controllers.signUp);
 router.post('/signin', controllers.signIn);
 router.get('/verifyuser', controllers.verifyUser);

@@ -1,0 +1,46 @@
+.myProfile-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+}
+.myProfile-title {
+  font-size: 50px;
+}
+.myProfile-UserName {
+  font-weight: bold;
+  font-style: italic;
+  color: #ff6763;
+}
+.myProfile-innerContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  width: 400px;
+  height: 350px;
+  justify-content: space-evenly;
+  text-align: left;
+  font-size: 30px;
+  border: 2px solid #1a1a1a;
+}
+.myProfile-Label {
+  display: inline;
+  color: #ff6763;
+}
+.myProfile-Label > span {
+  margin-left: 20px;
+  color: #1a1a1a;
+}
+.myProfile-Label > .myProfile-Address {
+  display: block;
+  margin-left: 0;
+  text-align: left;
+}
+.myProfile-button {
+  font-size: 30px;
+  margin: 20px;
+  height: max-content;
+  width: 100px;
+  border-radius: 8px;
+}
