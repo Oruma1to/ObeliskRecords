@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getUser } from '../../services/apiUsers';
 import './MyProfile.css';
 
@@ -72,7 +73,9 @@ export default function MyProfile() {
               </span>
             </div>
           </div>
-          <button className='myProfile-button'>Edit</button>
+          <Link to='/edit-MyProfile/'>
+            <button className='myProfile-button'>Edit</button>
+          </Link>
         </div>
       </div>
     );

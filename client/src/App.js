@@ -15,6 +15,7 @@ import Album from './components/albums/Album';
 import CreateAlbum from './components/albums/CRUD/CreateAlbum';
 import EditAlbum from './components/albums/CRUD/EditAlbum';
 import MyProfile from './components/users/MyProfile';
+import EditMyProfile from './components/users/EditMyProfile';
 
 import ShoppingCart from './components/shoppingCart/ShoppingCart';
 
@@ -73,6 +74,9 @@ function App() {
       </Route>
       <Route exact path='/my-profile/'>
         <MyProfile />
+      </Route>
+      <Route exact path='/edit-MyProfile/'>
+        <EditMyProfile />
       </Route>
     </div>
   );

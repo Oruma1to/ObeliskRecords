@@ -11,6 +11,7 @@ router.post('/signin', controllers.signIn);
 router.get('/verifyuser', controllers.verifyUser);
 router.get('/users/:id', restrict, controllers.getUser);
 router.put('/users/:id', restrict, controllers.updateUser);
+
 //Albums
 router.get('/albums', controllers.getAlbums);
 router.get('/albums/:id', controllers.getAlbum);
