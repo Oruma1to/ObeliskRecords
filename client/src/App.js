@@ -75,7 +75,7 @@ function App() {
       <Route exact path='/my-profile/'>
         <MyProfile />
       </Route>
-      <Route exact path='/edit-MyProfile/:id'>
+      <Route exact path='/edit-MyProfile/'>
         <EditMyProfile />
       </Route>
     </div>
