@@ -1,8 +1,8 @@
-.signup-container{
+.signup-container {
   display: flex;
   flex-direction: column;
   width: 300px;
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: 10%;
   padding: 60px 0px;
   border: 1px solid black;
@@ -16,25 +16,26 @@
 }
 
 .signup-form {
-margin-top: 10%;
+  margin-top: 10%;
 }
 
 .signup-btn {
-color: white;
-text-decoration: none;
-padding: 10px 1px;
-border-radius: 8px;
-width: 50%;
-background-color: #ff6763;
-margin: 10% auto 0 auto;
+  color: white;
+  text-decoration: none;
+  padding: 10px 1px;
+  border-radius: 8px;
+  width: 50%;
+  background-color: #ff6763;
+  margin: 10% auto 0 auto;
+  cursor: pointer;
 }
 
 .signup-su {
-color: white;
-margin-top: 10%;
+  color: white;
+  margin-top: 10%;
 }
 
 .signin-link {
-color: #ff6763;
-text-decoration: none;
+  color: #ff6763;
+  text-decoration: none;
 }
