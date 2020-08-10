@@ -42,9 +42,9 @@ export const getUser = async id => {
   }
 };
 
-export const editUser = async id => {
+export const editUser = async (id, bodyData) => {
   try {
-    const response = await api.get(`/users/${id}`);
+    const response = await api.put(`/users/${id}`, bodyData);
     return response.data;
   } catch (error) {
     throw error;

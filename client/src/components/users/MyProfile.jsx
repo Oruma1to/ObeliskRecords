@@ -73,7 +73,7 @@ export default function MyProfile() {
               </span>
             </div>
           </div>
-          <Link to='/edit-MyProfile/'>
+          <Link to={`/edit-MyProfile/${isLogged.user.id}`}>
             <button className='myProfile-button'>Edit</button>
           </Link>
         </div>
