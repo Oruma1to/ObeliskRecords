@@ -56,8 +56,8 @@ export default function Album() {
         </div>
         <AddItem album={album} />
         {admin_key ? (
-          <Link to={`/editalbum/${album._id}`} className='add-to-cart-button'>
-            Edit Album
+          <Link to={`/editalbum/${album._id}`} >
+            <button className='add-to-cart-button'>Edit Album</button>
           </Link>
         ) : null}
         <div className='second-container'>
