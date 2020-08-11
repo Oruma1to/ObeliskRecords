@@ -65,7 +65,8 @@ export default function ShoppingCart() {
           (shoppingCart.reduce((acc, curr) => acc + (curr.amount * curr.album.price), 0)).toFixed(2)
         }
       </div>
-      <button className="checkout">Checkout</button>
+      {shoppingCart.length !== 0 ? <button className="checkout">Checkout</button> : null}
+      
     </div>
   )
 }
