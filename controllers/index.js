@@ -32,13 +32,12 @@ const userOfRequest = req => {
 const signUp = async (req, res) => {
   try {
     console.log(req.body);
-    const { username, email, password, admin_key } = req.body;
+    const { username, email, password } = req.body;
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS);
     const user = await new User({
       username,
       email,
       password_digest,
-      admin_key,
     });
     await user.save();
 
