@@ -3,7 +3,8 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { verifyuser } from './services/apiUsers';
-import { logIn } from './actions';
+import { logIn, replaceCart } from './actions';
+import { getCart } from './services/apiCart';
 
 import Signin from './components/users/Signin';
 import Signup from './components/users/Signup';
@@ -19,6 +20,7 @@ import EditMyProfile from './components/users/EditMyProfile';
 
 import ShoppingCart from './components/shoppingCart/ShoppingCart';
 
+
 function App() {
   // const isLogged = useSelector(state => state.isLogged)
   const dispatch = useDispatch();
@@ -32,8 +34,11 @@ function App() {
   const initialize = async () => {
     try {
       const response = await verifyuser();
+      const data = await getCart()
+      console.log(data)
       // console.log(response);
       dispatch(logIn(response));
+      dispatch(replaceCart(data))
     } catch (error) {
       console.log(error);
     }
@@ -48,8 +53,6 @@ function App() {
         }}></div>
       <Route path='/' exact>
         <Home />
-        {/* <h1>IsLogged {isLogged ? "yes" : "no"}</h1>
-        <button onClick={() => dispatch(logIn())}>+</button> */}
       </Route>
       <Route path='/albums/:id'>
         <Album />
