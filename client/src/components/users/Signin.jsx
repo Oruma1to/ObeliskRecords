@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { signin } from '../../services/apiUsers'
 import { useDispatch } from 'react-redux'
-import { logIn } from '../../actions'
+import { logIn, replaceCart } from '../../actions'
 import { Link, useHistory } from 'react-router-dom'
+import { getCart } from '../../services/apiCart'
 import './Signin.css'
 
 export default function Signin() {
@@ -18,15 +19,18 @@ export default function Signin() {
   console.log(history)
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    try {
+      e.preventDefault();
+      const response = await signin({ username, password });
+      const data = await getCart()
+      console.log(response);
+      dispatch(logIn(response))
+      dispatch(replaceCart(data))
+      history.push('/')
 
-    const response = await signin({
-      username, password
-    });
-
-    console.log(response);
-    dispatch(logIn(response))
-    history.push('/')
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
