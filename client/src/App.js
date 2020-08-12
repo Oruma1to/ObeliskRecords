@@ -50,17 +50,17 @@ function App() {
       <div
         style={{
           height: '100px',
-        }}></div>
+        }}
+      ></div>
       <Route path='/' exact>
         <Home />
       </Route>
       <Route path='/albums/:id'>
+        <Album />
       </Route>
-      <Route path='/signin'>
-        {isLogged === null ? <Signin /> : <Redirect to='/' />}
-      </Route>
+      <Route path='/signin'>{isLogged === null ? <Signin /> : <Redirect to='/' />}</Route>
       <Route path='/signup'>
-        <Signup />
+        {isLogged === null ? <Signup /> : <Redirect to='/' />}
       </Route>
       <Route exact path='/albums'>
         <Albums />
