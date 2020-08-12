@@ -29,7 +29,7 @@ export default function Album() {
   };
 
   let admin_key = false;
-
+  console.log(isLogged)
   if (isLogged) {
     admin_key = isLogged.user.admin_key;
   }
