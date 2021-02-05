@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { createAlbum } from '../../../services/apiAlbums'
 import './CRUD.css'
 
@@ -74,8 +74,6 @@ export default function CreateAlbum() {
     setSongTitle('')
     setLength('0:00')
   }
-
-  console.log(albumName, artistName, year, genre, albumCover, tracks)
 
   return (
     <div className="edit-container">

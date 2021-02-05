@@ -26,15 +26,13 @@ export default function EditAlbum() {
   // load the album on componentDidMount 
   useEffect(() => {
     loadAlbum(id)
-  }, [])
+  }, [id])
   
 
   // load an album from the backend 
   const loadAlbum = async (id) => {
     try {
       const response = await getOneAlbum(id)
-      console.log(response)
-
       setAlbumName(response.albumName)
       setArtistName(response.artistName)
       setYear(response.year)
@@ -98,8 +96,6 @@ export default function EditAlbum() {
       console.log(error)
     }
   }
-
-  console.log(albumName, artistName, year, genre, albumCover, tracks)
 
     return (
       <div>

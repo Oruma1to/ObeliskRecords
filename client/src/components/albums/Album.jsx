@@ -18,11 +18,8 @@ export default function Album() {
   const getAlbumInfo = async () => {
     try {
       let { id } = params;
-      console.log(id);
       const response = await getOneAlbum(id);
-      console.log(response.tracks);
       setAlbum(response);
-      // setTracks(response.tracks);
     } catch (error) {
       console.log(error);
     }
@@ -68,7 +65,7 @@ export default function Album() {
               <p className='trackLength'>Length</p>
             </div>
             {album.tracks.map(track => (
-              <div className='track-info'>
+              <div key={ track.trackNumber} className='track-info'>
                 <p>{track.trackNumber}</p>
                 <br />
                 <p>{track.songTitle}</p>

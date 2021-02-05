@@ -16,7 +16,6 @@ export default function Albums() {
   const pullAlbums = async () => {
     try {
       const response = await getAlbums();
-      console.log(response);
       setAlbums(response);
     } catch (error) {
       console.log(error);

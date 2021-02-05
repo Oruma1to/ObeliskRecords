@@ -3,7 +3,6 @@ import api from './apiConfig';
 export const signin = async userData => {
   try {
     const response = await api.post(`/signin`, userData);
-    console.log(response);
     await localStorage.setItem('token', response.data.token);
     return response.data;
   } catch (error) {

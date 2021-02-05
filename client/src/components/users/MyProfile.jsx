@@ -21,14 +21,10 @@ export default function MyProfile() {
   const isLogged = useSelector(state => state.isLogged);
 
   //this will run after the rendering and only once
-  useEffect(() => {
-    loadUsersInfo();
-  }, [isLogged]);
-
-  const loadUsersInfo = async () => {
+  useEffect(() => {  
+    const loadUsersInfo = async () => {
     try {
       const response = await getUser(isLogged.user.id);
-      console.log('loadUsersInfo', response);
       setUsername(response.username);
       setEmail(response.email);
       setFullname(response.fullName);
@@ -42,6 +38,10 @@ export default function MyProfile() {
       console.log(error);
     }
   };
+    loadUsersInfo();
+  }, [isLogged]);
+
+
   if (!isLogged) {
     return <h1>Loading...</h1>;
   } else {
@@ -68,12 +68,14 @@ export default function MyProfile() {
               Address:
               <span className='myProfile-Address'>
                 {address1}
+                <br/>
+                {address2}
                 <br />
                 {city}, {state} {zipcode}
               </span>
             </div>
           </div>
-          <Link to={`/edit-MyProfile/`}>
+          <Link to="/edit-MyProfile/">
             <button className='myProfile-button'>Edit</button>
           </Link>
         </div>
