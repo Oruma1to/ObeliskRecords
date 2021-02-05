@@ -9,3 +9,15 @@
   max-height: 200px;
   margin: 0 auto;
 }
+
+.edit-container {
+  display:flex;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.edit-wrapper {
+  width: 47.35%;
+  display: flex;
+  justify-content: center;
+}

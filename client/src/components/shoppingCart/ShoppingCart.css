@@ -1,5 +1,5 @@
 .shopping-cart-container {
-  width: 40%;
+  width: 30%;
   margin: 0 auto;
   margin-top: 100px;
   display: flex;
@@ -12,13 +12,13 @@
   border: 1px solid black;
   background-color: black;
   color: white;
-  margin-top: 10px;
+  margin:0px;
   box-shadow: 0 0 17px 2px rgba(0, 0, 0, 0.2);
-
+  width: 100%;
+  margin-top: 10px
 }
 
 .shopping-cart-item {
-  padding: 0 auto;
   width: 30%;
   height: 200px;
   display: flex;
@@ -27,23 +27,43 @@
   margin: 0 auto;
 }
 
+.cart-album-title {
+  font-size: 1.1rem
+}
+
+.cart-album-desc {
+  font-size: .9rem
+}
+
 .important {
   color: #ff6763
 }
 
 .total-cart-price {
   border: 1px solid black;
-  border-radius: 5px;
-  margin: 5px;
-  padding: 5px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px 0;
   display: flex;
   background-color: black;
-  color: #ff6763
+  max-width: 800px;
+}
+
+.cart-price-text {
+  margin-left: 5%;
+  color: #ff6763;
+}
+
+.shopping-cart-btn-div {
+  display: flex;
+  width: 40%
 }
 
 .shopping-cart-button {
-  font-size: 1rem;
-  padding: 5px 10px;
+  font-size: 2rem;
+  background-color: #ff6763;
+  width: 20px;
+  text-align: center;
 }
 
 .cart-albumImage {

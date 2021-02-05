@@ -25,7 +25,7 @@ export default function CreateAlbum() {
   // methods to add and remove tracks in editor (local state only)
   const addTrack = () => {
     tracks.push({
-      trackNumber: tracks.length+1,
+      trackNumber: tracks.length + 1,
       songTitle, length
     })
     setTracks(tracks)
@@ -49,7 +49,7 @@ export default function CreateAlbum() {
   // function for submitting form to create 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
+
     try {
       const response = await createAlbum({
         albumName, artistName, year, price, genre, albumCover, tracks
@@ -77,9 +77,10 @@ export default function CreateAlbum() {
 
   console.log(albumName, artistName, year, genre, albumCover, tracks)
 
-    return (
-      <div>
-      
+  return (
+    <div className="edit-container">
+      <div className="edit-wrapper">
+
         <form onSubmit={handleSubmit}>
 
           <label htmlFor="albumName">Album Name</label>
@@ -135,7 +136,7 @@ export default function CreateAlbum() {
               onChange={e => setAlbumCover(e.target.value)}
             />
           </section>
-        
+
           {/* show existing tracks  */}
           {tracks.length > 0 ? <h3>Current Tracks</h3> : null}
           {
@@ -150,7 +151,7 @@ export default function CreateAlbum() {
               )
             })
           }
-
+          <div className="add-track"> 
           <h3>Add a track</h3>
           <section className="editSection">
             <label>Track Number: {tracks.length + 1}</label>
@@ -161,7 +162,7 @@ export default function CreateAlbum() {
               value={songTitle}
               onChange={e => setSongTitle(e.target.value)}
             />
-          
+
             <label htmlFor="length">Song Length</label>
             <input name="length"
               type="text"
@@ -171,11 +172,12 @@ export default function CreateAlbum() {
 
             <button type="button" onClick={addTrack}>Add Song</button>
           </section>
-
+          </div>
           <button>Submit</button>
         </form>
 
       </div>
-    )
+    </div>
+  )
 
 }
