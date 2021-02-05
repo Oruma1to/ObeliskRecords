@@ -21,3 +21,129 @@
   display: flex;
   justify-content: center;
 }
+
+.albumEditContainer {
+  margin: 2% auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.complete-btn  {
+  align-self: center;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 3%
+}
+
+.sub-album {
+  background-color: green;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+.del-album {
+  background-color: red;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+.aat-title {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.aat {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.aat > button {
+  background-color: teal;
+  color: white;
+  width: 70px;
+  border-radius: 10px;
+}
+
+.details > input {
+  width: 12%;
+}
+
+.details > label {
+  font-size: 14px;
+}
+
+.details {
+  display: flex;
+  justify-content:space-between;
+  margin-bottom: 2%;
+}
+
+.img-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: #ff6763;
+}
+
+.img-preview > input {
+  width: 30%;
+}
+
+.ct-title {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.current-tracks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.current-track {
+  width: 20%;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+.current-track > button {
+  background-color: red;
+  color: white;
+  width: 80px;
+  align-self: center;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.edit-album-page-title {
+  text-align: center;
+  margin-top: 2%;
+}
+
+
+@media (max-width: 860px) {
+  .details > label {
+    font-size: 12px;
+  }
+  .details > input {
+    width: 60px;
+  }
+
+  .aat {
+    font-size: 12px;
+  }
+}

@@ -21,23 +21,23 @@ export default function MyProfile() {
   const isLogged = useSelector(state => state.isLogged);
 
   //this will run after the rendering and only once
-  useEffect(() => {  
+  useEffect(() => {
     const loadUsersInfo = async () => {
-    try {
-      const response = await getUser(isLogged.user.id);
-      setUsername(response.username);
-      setEmail(response.email);
-      setFullname(response.fullName);
-      setAddress1(response.address1);
-      setAddress2(response.address2);
-      setCity(response.city);
-      setState(response.state);
-      setZipcode(response.zipcode);
-      setPhoneNumber(response.phoneNumber);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+      try {
+        const response = await getUser(isLogged.user.id);
+        setUsername(response.username);
+        setEmail(response.email);
+        setFullname(response.fullName);
+        setAddress1(response.address1);
+        setAddress2(response.address2);
+        setCity(response.city);
+        setState(response.state);
+        setZipcode(response.zipcode);
+        setPhoneNumber(response.phoneNumber);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     loadUsersInfo();
   }, [isLogged]);
 
@@ -68,7 +68,7 @@ export default function MyProfile() {
               Address:
               <span className='myProfile-Address'>
                 {address1}
-                <br/>
+                <br />
                 {address2}
                 <br />
                 {city}, {state} {zipcode}

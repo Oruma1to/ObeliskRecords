@@ -37,3 +37,35 @@
 }
 
 /*   color: #ff6763; */
+
+@media (max-width: 640px) {
+  .nav-link {
+    font-size: 1.1rem
+  }
+
+  .cart {
+    padding: 5px;
+    font-size: .7rem;
+  }
+}
+@media (max-width: 480px) {
+  .nav-link {
+    font-size: .8rem
+  }
+
+  .cart {
+    padding: 5px;
+    font-size: .5rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .nav-link {
+    font-size: .6rem
+  }
+
+  .cart {
+    padding: 5px;
+    font-size: .5rem;
+  }
+}

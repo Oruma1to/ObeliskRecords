@@ -27,7 +27,7 @@ export default function EditAlbum() {
   useEffect(() => {
     loadAlbum(id)
   }, [id])
-  
+
 
   // load an album from the backend 
   const loadAlbum = async (id) => {
@@ -48,7 +48,7 @@ export default function EditAlbum() {
   // methods to add and remove tracks in editor (local state only)
   const addTrack = () => {
     tracks.push({
-      trackNumber: tracks.length+1,
+      trackNumber: tracks.length + 1,
       songTitle, length
     })
     setTracks(tracks)
@@ -72,7 +72,7 @@ export default function EditAlbum() {
   // function for submitting form to create 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
+
     try {
       const response = await editAlbum(id, {
         albumName, artistName, year, price, genre, albumCover, tracks
@@ -97,48 +97,52 @@ export default function EditAlbum() {
     }
   }
 
-    return (
-      <div>
-      
+  return (
+    <div>
+      <h1 className="edit-album-page-title">Edit Album</h1>
+      <div className="albumEditContainer">
+
         <form onSubmit={handleSubmit}>
+          <div className="details">
+            <label htmlFor="albumName">Album Name</label>
+            <input name="albumName"
+              type="text"
+              value={albumName}
+              onChange={e => setAlbumName(e.target.value)}
+            />
+            <hr />
+            <label htmlFor="artistName">Artist Name</label>
+            <input name="artistName"
+              type="text"
+              value={artistName}
+              onChange={e => setArtistName(e.target.value)}
+            />
+            <hr />
+            <label htmlFor="year">Year</label>
+            <input name="year"
+              type="number"
+              value={year}
+              onChange={e => setYear(e.target.value)}
+            />
 
-          <label htmlFor="albumName">Album Name</label>
-          <input name="albumName"
-            type="text"
-            value={albumName}
-            onChange={e => setAlbumName(e.target.value)}
-          />
+            <hr />
+            <label htmlFor="price">Price</label>
+            <input name="price"
+              type="number"
+              value={price}
+              onChange={e => setPrice(e.target.value)}
+            />
 
-          <label htmlFor="artistName">Artist Name</label>
-          <input name="artistName"
-            type="text"
-            value={artistName}
-            onChange={e => setArtistName(e.target.value)}
-          />
-
-          <label htmlFor="year">Year</label>
-          <input name="year"
-            type="number"
-            value={year}
-            onChange={e => setYear(e.target.value)}
-          />
-
-          <label htmlFor="price">Price</label>
-          <input name="price"
-            type="number"
-            value={price}
-            onChange={e => setPrice(e.target.value)}
-          />
-
-          <label htmlFor="genre">Genre</label>
-          <input name="genre"
-            type="text"
-            value={genre}
-            onChange={e => setGenre(e.target.value)}
-          />
-
+            <hr />
+            <label htmlFor="genre">Genre</label>
+            <input name="genre"
+              type="text"
+              value={genre}
+              onChange={e => setGenre(e.target.value)}
+            />
+          </div>
           {/* preview image url to make sure it shows */}
-          <section className="editSection">
+          <section className="editSection img-preview">
             {
               albumCover ? (
                 <img className="testImage"
@@ -155,24 +159,25 @@ export default function EditAlbum() {
               onChange={e => setAlbumCover(e.target.value)}
             />
           </section>
-        
-          {/* show existing tracks  */}
-          {tracks.length > 0 ? <h3>Current Tracks</h3> : null}
-          {
-            tracks.map((track, ind) => {
-              return (
-                <section className="editSection" key={ind}>
-                  <p>Track number: {track.trackNumber}</p>
-                  <p>Song title: {track.songTitle}</p>
-                  <p>Song Length: {track.length}</p>
-                  <button type="text" onClick={() => removeTrack(ind)}>Remove Track?</button>
-                </section>
-              )
-            })
-          }
 
-          <h3>Add a track</h3>
-          <section className="editSection">
+          {/* show existing tracks  */}
+          {tracks.length > 0 ? <h3 className="ct-title">Current Tracks</h3> : null}
+          <div className="current-tracks">
+            {
+              tracks.map((track, ind) => {
+                return (
+                  <section className="editSection current-track" key={ind}>
+                    <p>Track number: {track.trackNumber}</p>
+                    <p>Song title: {track.songTitle}</p>
+                    <p>Song Length: {track.length}</p>
+                    <button type="text" onClick={() => removeTrack(ind)}>Remove Track?</button>
+                  </section>
+                )
+              })
+            }
+          </div>
+          <h3 className="aat-title">Add a track</h3>
+          <section className="editSection aat">
             <label>Track Number: {tracks.length + 1}</label>
 
             <label htmlFor="songTitle">Song Title</label>
@@ -181,7 +186,7 @@ export default function EditAlbum() {
               value={songTitle}
               onChange={e => setSongTitle(e.target.value)}
             />
-          
+
             <label htmlFor="length">Song Length</label>
             <input name="length"
               type="text"
@@ -192,11 +197,14 @@ export default function EditAlbum() {
             <button type="button" onClick={addTrack}>Add Song</button>
           </section>
 
-          <button>Submit</button>
+          <div className="btns">
+            <button className="complete-btn sub-album">Submit</button>
+            <button className="complete-btn del-album" type="button" onClick={handleDelete}>Delete Album</button>
+          </div>
         </form>
 
-        <button type="button" onClick={handleDelete}>Delete Album</button>
       </div>
-    )
+    </div>
+  )
 
 }
