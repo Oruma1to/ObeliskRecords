@@ -11,8 +11,6 @@ const shoppingCart = (state = [], action) => {
       // try to find if item is already in cart 
       // if not, create new object and add it 
 
-      console.log('reducer - shoppingCart - payload: ', action.payload)
-
       let foundAlbum = false 
 
       // i used a for loop so i can break the loop if i find a match 
@@ -32,8 +30,6 @@ const shoppingCart = (state = [], action) => {
           amount: 1
         })
       } 
-
-      console.log(state)
 
       updateCart(state)
 

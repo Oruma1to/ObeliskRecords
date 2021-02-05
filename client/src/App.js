@@ -29,14 +29,12 @@ function App() {
 
   useEffect(() => {
     initialize();
-  }, []);
+  });
 
   const initialize = async () => {
     try {
       const response = await verifyuser();
       const data = await getCart()
-      console.log(data)
-      // console.log(response);
       dispatch(logIn(response));
       dispatch(replaceCart(data))
     } catch (error) {

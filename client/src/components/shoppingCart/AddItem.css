@@ -8,3 +8,11 @@
   border-radius: 8px;
   font-size: 1.1rem;
 }
+
+@media (max-width: 460px) {
+  .add-to-cart-button {
+    font-size: 14px;
+    width: 100px;
+    height: 30px;
+  }
+}

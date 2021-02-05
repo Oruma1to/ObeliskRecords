@@ -17,3 +17,8 @@
   width: 50%;
 }
 
+@media (max-width: 460px) {
+  .site-title {
+    font-size: 2rem;
+  }
+}

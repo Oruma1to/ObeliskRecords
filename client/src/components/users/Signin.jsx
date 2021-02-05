@@ -13,17 +13,13 @@ export default function Signin() {
 
   const dispatch = useDispatch()
 
-  console.log(username, password);
-
   let history = useHistory()
-  console.log(history)
 
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
       const response = await signin({ username, password });
       const data = await getCart()
-      console.log(response);
       dispatch(logIn(response))
       dispatch(replaceCart(data))
       history.push('/')
@@ -58,7 +54,7 @@ export default function Signin() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </form>
-        <Link className="signin-btn" onClick={handleSubmit}>Submit</Link>
+        <Link to="blank" className="signin-btn" onClick={handleSubmit}>Submit</Link>
         <p className="signin-su">Don't have an account? <Link to="/signup" className="signup-link">Sign Up!</Link></p>
       </div>
     </>

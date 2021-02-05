@@ -21,10 +21,7 @@ export default function EditMyProfile() {
   const history = useHistory();
   //this will run after the rendering and only once
   useEffect(() => {
-    loadUsersInfo();
-  }, [isLogged]);
-
-  const loadUsersInfo = async () => {
+    const loadUsersInfo = async () => {
     try {
       const response = await getUser(isLogged.user.id);
       console.log('loadUsersInfo', response);
@@ -41,6 +38,10 @@ export default function EditMyProfile() {
       console.log(error);
     }
   };
+    loadUsersInfo();
+  }, [isLogged]);
+
+
   const handleSubmit = async e => {
     e.preventDefault();
 
@@ -97,7 +98,7 @@ export default function EditMyProfile() {
           <input
             name='address2'
             type='text'
-            value={address1}
+            value={address2}
             onChange={e => setAddress2(e.target.value)}
           />
           <label htmlFor='city'>City:</label>

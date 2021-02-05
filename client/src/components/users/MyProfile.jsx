@@ -22,26 +22,26 @@ export default function MyProfile() {
 
   //this will run after the rendering and only once
   useEffect(() => {
+    const loadUsersInfo = async () => {
+      try {
+        const response = await getUser(isLogged.user.id);
+        setUsername(response.username);
+        setEmail(response.email);
+        setFullname(response.fullName);
+        setAddress1(response.address1);
+        setAddress2(response.address2);
+        setCity(response.city);
+        setState(response.state);
+        setZipcode(response.zipcode);
+        setPhoneNumber(response.phoneNumber);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     loadUsersInfo();
   }, [isLogged]);
 
-  const loadUsersInfo = async () => {
-    try {
-      const response = await getUser(isLogged.user.id);
-      console.log('loadUsersInfo', response);
-      setUsername(response.username);
-      setEmail(response.email);
-      setFullname(response.fullName);
-      setAddress1(response.address1);
-      setAddress2(response.address2);
-      setCity(response.city);
-      setState(response.state);
-      setZipcode(response.zipcode);
-      setPhoneNumber(response.phoneNumber);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
   if (!isLogged) {
     return <h1>Loading...</h1>;
   } else {
@@ -69,11 +69,13 @@ export default function MyProfile() {
               <span className='myProfile-Address'>
                 {address1}
                 <br />
+                {address2}
+                <br />
                 {city}, {state} {zipcode}
               </span>
             </div>
           </div>
-          <Link to={`/edit-MyProfile/`}>
+          <Link to="/edit-MyProfile/">
             <button className='myProfile-button'>Edit</button>
           </Link>
         </div>

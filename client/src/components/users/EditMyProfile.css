@@ -8,7 +8,8 @@
 .editProfileForm {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 50%;
+  max-width: 400px;
 }
 .format {
   font-size: 10px;
@@ -21,4 +22,17 @@
   font-size: 20px;
   height: 50px;
   width: 100px;
+}
+
+.editProfileForm > input {
+  padding-left: 5px
+}
+
+@media (max-width: 600px) { 
+  .editSubmit {
+    height: 30px;
+    width: 70px;
+    font-size: 16px
+  }
+  
 }

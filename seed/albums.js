@@ -22,8 +22,7 @@ const createAlbums = async () => {
           songTitle: 'One Step Closer',
           length: '2:35',
         },
-      ],
-      albumCover: 'https://img.discogs.com/WWM3W1bvHKrhIWN0aVi9cJPD4Xg=/fit-in/600x588/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6916676-1429456835-4674.jpeg.jpg'
+      ], albumCover: 'https://i.imgur.com/y0iTcyW.jpg'
     },
     {
       albumName: 'YHLQMDLG',
@@ -44,7 +43,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://www.uscannenbergmedia.com/resizer/OozCk3_74oKgXYBlShh8usx4hgE=/1200x0/filters:quality(100)/arc-anglerfish-arc2-prod-uscannenberg.s3.amazonaws.com/public/OEV26QQPTJEKVHO4HFVZ5BTBWQ.jpeg',
+        'https://i.imgur.com/qATRmBL.png',
     },
     {
       albumName: 'A Different Age',
@@ -64,7 +63,7 @@ const createAlbums = async () => {
           length: '3:36',
         },
       ],
-      albumCover: 'https://f4.bcbits.com/img/a0685679618_10.jpg',
+      albumCover: 'https://i.imgur.com/8maI1Us.png',
     },
     {
       albumName: 'Cigarettes After Sex',
@@ -85,7 +84,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Cigarettes_After_Sex_%28album%29.svg/1920px-Cigarettes_After_Sex_%28album%29.svg.png',
+        'https://i.imgur.com/t9mc8NO.png',
     },
     {
       albumName: 'folklore',
@@ -106,7 +105,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh3.googleusercontent.com/G7UHPJnA4PGNUQG7okFdfGjXeC6gJsu2waP3ICthhiYEsqe3lGsI_ta0fnwJ5RaehfbCT_zy=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/i89LuEs.png',
     },
     {
       albumName: 'No Pressure',
@@ -127,7 +126,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh3.googleusercontent.com/BgdeLGl74qhEwHXWbPKhD5rLGgeMC6jeOvwi6b80DL0KssNDVfjhwkkEM03zPT4esQ65D3tEb5g=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/kv7rj4B.png',
     },
     {
       albumName: 'Viva La Vida or Death and All His Friends',
@@ -148,7 +147,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh3.googleusercontent.com/udhEzwsNV3Q2tpfAovjU9kk1pVWHZervx_f664xip-6cNzJv7cAtmHSJWLWkfOhcWCm2b_0uAw=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/W77vO1O.png',
     },
     {
       albumName: 'The Resistance',
@@ -169,7 +168,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh4.ggpht.com/v9M13PqWZ-tfl-sYDevBIc4hg5-XgfwqNbMnzaJg0E85797GuxgxSDhAK0RYjVlyaG2rl275Bw=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/ME7gOH9.png',
     },
     {
       albumName: 'The Killers',
@@ -190,7 +189,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh3.googleusercontent.com/KoHTjN_qHon5OolATy6GgIwgkygyLjEYi0F0o9u3UgIwcbcur-cXKrVsuiVYiqld8X4oB8giug=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/rdxbTWu.png',
     },
     {
       albumName: 'Laundry Service',
@@ -211,7 +210,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh3.ggpht.com/8f3iII3JFeRnuh-GcORAx91P9x0LRNjG_95lbCosvFVwAoLxaVZ261WCs7sW071WnAdm-UM8RA=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/BA5D3xc.png',
     },
     {
       albumName: 'My Dear Melancholy',
@@ -232,7 +231,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh3.googleusercontent.com/MsQUTKl1P4DoRiOGQcr12MgM-KFVmqseb-z-WMJ51DF119_1OaYvHBynEb5kzGiuQn2_8tzJ7g=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/KZCV2Xn.png',
     },
     {
       albumName: 'Views',
@@ -253,7 +252,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh3.googleusercontent.com/acO4BHeVRW7Yu4VcVLaiFFRXu5M7ftpqnhjoLdAwHYFtqy1fruz8tW1xk4gjzZHiD-qXYrM2_h4=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/hCvsyYL.png',
     },
     {
       albumName: '14:59',
@@ -274,7 +273,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh5.ggpht.com/WNH-Kf6IEsx9nyIP-rfUjCik248an-RcMROMieERi4peFKGGkLdxr8XYuo-tCREzMDB23_x6Bqk=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/mCSOu8f.png',
     },
     {
       albumName: 'Astro Lounge',
@@ -295,7 +294,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh3.googleusercontent.com/6lIEczg-weYa3o3pFZj92JXlHaEMQVyiStqDRmqThseWNC5rFsaXnZklTqa_ozGW4EuKzEEcjwQ=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/brdqxPm.png',
     },
     {
       albumName: 'Audioslave',
@@ -316,7 +315,7 @@ const createAlbums = async () => {
         },
       ],
       albumCover:
-        'https://lh3.googleusercontent.com/smWyGl1oLQE6vSh4UASDLmpYDt7aqTgc0jxbcZGoUIf018KHLeAZyoSp6C-7lQYpBYrrRDzYKy4=s1024-c-e100-rwu-v1',
+        'https://i.imgur.com/udEytzl.png',
     },
   ];
   await Album.insertMany(albums);
