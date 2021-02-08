@@ -11,7 +11,7 @@ const getToken = () => {
 let apiUrl
 
 const apiUrls = {
-  production: 'https://git.heroku.com/obelisk-records',
+  production: 'https://obelisk-records.herokuapp.com/api',
   development: 'http://localhost:3000/api'
 }
 
