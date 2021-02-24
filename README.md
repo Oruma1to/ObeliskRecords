@@ -1,6 +1,6 @@
 # ObeliskRecords
 <p align="center">
-  <img src="/src/images/giphy.gif" width="80%"/>
+  <img src="http://joshuaaponte.surge.sh/Images/obrec.png" width="80%"/>
 </p>
 # PROJECT 2 README <!-- omit in toc -->
 
