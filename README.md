@@ -127,15 +127,15 @@ src
 
 #### Component Estimates
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Create Header/footer |    L     |     1 hr      |          |    <1 hr    |
-| Setup global state |    H     |     3 hrs      |          |     3hrs     |
-| Backend Logic for Auth/Cart |    H     |     20 hrs      |          |     12hrs     |
-|   Create API Data Structure   |    H     |     1 hr      |          |     1hr     |
-| Styling |    H     |     10 hrs      |      L    |     6hrs     |
-| Admin Functionality   |    H     |     6 hrs      |          |    4hrs     |
-| TOTAL               |          |    41 hrs      |          |     27hrs     |
+| Task                | Priority | Estimated Time | Actual Time |
+| ------------------- | :------: | :------------:| :---------: |
+| Create Header/footer |    L     |     1 hr    |    <1 hr    |
+| Setup global state |    H     |     3 hrs          |     3hrs     |
+| Backend Logic for Auth/Cart |    H     |     20 hrs         |     12hrs     |
+|   Create API Data Structure   |    H     |     1 hr           |     1hr     |
+| Styling |    H     |     10 hrs    |     6hrs     |
+| Admin Functionality   |    H     |     6 hrs  |    4hrs     |
+| TOTAL               |          |    41 hrs       |     27hrs     |
 
 <br>
 
