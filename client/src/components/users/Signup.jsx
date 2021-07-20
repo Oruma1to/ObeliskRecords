@@ -85,7 +85,7 @@ export default function Signin() {
         </form>
         {/* <Link className='signup-btn'>Submit</Link> */}
         <p className='signup-su'>
-          Already have an account? <Link className='signin-link'>Sign In!</Link>
+          Already have an account? <Link  to="/signin"className='signin-link'>Sign In!</Link>
         </p>
       </div>
     </>

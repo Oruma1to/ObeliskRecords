@@ -13,6 +13,7 @@
 .signin-title {
     color: #ff6763;
     font-size: 3rem;
+    font-weight: 600;
 }
 
 .signin-form {
@@ -35,6 +36,11 @@
   width: 50%;
   background-color: #ff6763;
   margin: 10% auto 0 auto;
+  text-shadow: .1rem .1rem .1rem #333
+}
+
+.signin-btn:active {
+  transform: scale(.98)
 }
 
 .signin-su {
