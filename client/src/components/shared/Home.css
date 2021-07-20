@@ -5,11 +5,12 @@
 
 .site-title {
   font-size: 3rem;
+  font-weight: 700;
   padding: .8rem;
-  width: 50%;
   margin: 0 auto;
-  text-align: center;
+  padding: 4rem 0;
   color: #ff6763;
+  text-shadow: .2rem .2rem .1rem #777;
 }
 
 .home-search {
@@ -17,7 +18,7 @@
   width: 50%;
 }
 
-@media (max-width: 460px) {
+@media (max-width: 520px) {
   .site-title {
     font-size: 2rem;
   }

@@ -1,28 +1,56 @@
 .header-wrapper {
   position: fixed;
-  width: 100vw
+  width: 100%;
+  background-color: #1a1a1a;
 }
 
 .header-nav {
   display: flex;
   justify-content: space-evenly;
-  height: 100px;
-  background-color: #1a1a1a;
+  height: 6.25rem;
+  max-width: 75rem;
+  margin: 0 auto;
 }
 
 .nav-link {
   text-decoration: none;
   color: #fff;
   font-size: 1.5rem;
-  margin: auto
+  margin: auto;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  position: relative;
+  transition: all .3s ease-in-out;
+}
+
+.nav-link::before {
+  content: '';
+  width: 0;
+  height: .13rem;
+  background-color: #ff6763;
+  position: absolute;
+  left: -15%;
+  bottom: -.3rem;
+  transition: width .2s;
+}
+
+.nav-link:hover {
+  color: #ff6763
+}
+.nav-link:hover::before {
+  width: 130%;
 }
 
 .cart {
-  padding: 10px;
+  padding: 1rem 1.5rem;
+  margin: auto;
+  color: white;
+  text-decoration: none;
   font-size: 1rem;
   background-color: #ff6763;
   border-color: #ff6763;
-  border-radius: 10px
+  border-radius: 10px;
+  text-shadow: .1rem .1rem .1rem #333
 }
 
 .sign-out {

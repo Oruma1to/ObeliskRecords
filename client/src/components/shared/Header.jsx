@@ -55,7 +55,7 @@ export default function Header() {
             Sign Out
           </Link>
         )}
-        <Link to='/cart' className='nav-link cart'>
+        <Link to='/cart' className='cart'>
           Shopping Cart: {cartLength}
         </Link>
       </ul>
